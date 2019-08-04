@@ -32,7 +32,6 @@ export class PostsService {
                 observer.error(error);
             }
         );
-
     });
 }
 

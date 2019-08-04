@@ -11,8 +11,8 @@ export interface Post {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   posts: Array<Post>;
+
   constructor(private postService: PostsService) { }
 
   ngOnInit() {
