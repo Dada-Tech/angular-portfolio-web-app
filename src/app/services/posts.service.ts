@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient,HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 export interface Post {
   title: string;
   content: string;
@@ -11,8 +11,8 @@ export interface Post {
 })
 
 export class PostsService {
-  posts:Array<Post>;
-  post:Post;
+  posts: Array<Post>;
+  post: Post;
   constructor(private _http: HttpClient) { }
   public getPosts(): Observable<Array<Post>> {
 
@@ -25,19 +25,19 @@ export class PostsService {
                     observer.next(this.posts);
                     observer.complete();
                 } else {
-                    observer.error(response);   
+                    observer.error(response);
                 }
             },
             error => {
                 observer.error(error);
             }
-        )
-       
+        );
+
     });
 }
 
 loadPosts(): Observable<Array<Post>> {
-let url = "https://divinecustomcakes.com/wp-json/wp/v2/posts"; //I used my wordpress site at "localhost/xo/""
+const url = 'https://divinecustomcakes.com/wp-json/wp/v2/posts'; // I used my wordpress site at "localhost/xo/""
 
 return this._http.get<Array<Post>>(url);
 }
@@ -53,19 +53,19 @@ public getPost(slug: string): Observable<Post> {
                   observer.next(this.post);
                   observer.complete();
               } else {
-                  observer.error(response);   
+                  observer.error(response);
               }
           },
           error => {
               observer.error(error);
           }
-      )
-     
+      );
+
   });
 }
 
-loadPost(slug: string): Observable<Post>{
-let url = "http://localhost/xo/?rest_route=/wp/v2/posts?slug="+slug;
+loadPost(slug: string): Observable<Post> {
+const url = 'http://localhost/xo/?rest_route=/wp/v2/posts?slug=' + slug;
 return this._http.get<Post>(url);
 }
 

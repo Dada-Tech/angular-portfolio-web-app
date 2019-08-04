@@ -3,40 +3,35 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { PostsService } from './services/posts.service';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { CategoryComponent } from './category/category.component';
 import { SingleComponent } from './single/single.component';
-import { RouterModule, Routes } from '@angular/router';
-import { PostsService } from './services/posts.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+// import { RouterModule, Routes } from '@angular/router';
 
-const appRoutes: Routes = [
-  {
-    path: ':slug',
-    component: SingleComponent
-  },
-  { path: '',
-    component: CategoryComponent,
-    pathMatch: 'full'
-  }
- ];
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CategoryComponent,
-    SingleComponent
+    SingleComponent,
+    AboutComponent,
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
