@@ -1,51 +1,88 @@
 @import 'variables';
 
-.masthead {
-  position: relative;
-  width: 100%;
-  height: auto;
-  min-height: 35rem;
-  padding: 15rem 0;
-
-  background-image: url('../../assets/img/bg-masthead.jpg');
-  background: #16222A;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+.hero-banner{
+  background: url(../../assets/img/bg-masthead.jpg) left center no-repeat;
+  //background-image: url('../../assets/img/bg-masthead.jpg');
   background-size: cover;
-  h1 {
-    font-family: 'Varela Round', serif;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    letter-spacing: 0.8rem;
-    background: -webkit-linear-gradient(fade-out(white, 0.1), fade-out(white, 1));
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+  position: relative;
+  z-index: 1;
+  padding-top: 130px;
+  padding-bottom: 70px;
+
+  @media(min-width: 600px){
+    padding-top: 190px;
+    padding-bottom: 120px;
   }
-  h2 {
-    max-width: 20rem;
-    font-size: 1rem;
+
+  @media(min-width: 1200px){
+    padding-top: 290px;
+    padding-bottom: 220px;
   }
-  @media(min-width: 768px) {
-    h1 {
-      font-size: 4rem;
-      line-height: 4rem;
+
+  &::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -1;
+    opacity: .4;
+  }
+
+  h1{
+    color: $white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @media(min-width: 992px){
+      margin-bottom: 40px;
     }
   }
-  @media(min-width: 992px) {
-    height: 100vh;
-    padding: 0;
-    h1 {
-      font-size: 6.5rem;
-      line-height: 6.5rem;
-      letter-spacing: 0.8rem;
+
+  > *{
+    color: $white;
+  }
+}
+
+.hero-subtitle{
+  max-width: 550px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+
+  @media(min-width: 992px){
+    margin-bottom: 38px;
+  }
+}
+
+.hero-banner-sm{
+  padding-top: 120px;
+  padding-bottom: 50px;
+
+  @media(min-width: 600px){
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+
+  @media(min-width: 1200px){
+    padding-top: 240px;
+    padding-bottom: 140px;
+  }
+
+  h1{
+    font-size: 30px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+
+    @media(min-width: 600px){
+      font-size: 40px;
     }
-    h2 {
-      max-width: 30rem;
-      font-size: 1.25rem;
+
+    @media(min-width: 1200px){
+      font-size: 50px;
     }
   }
 }
