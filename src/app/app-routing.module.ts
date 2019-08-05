@@ -2,15 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { SingleComponent } from './single/single.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent} from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectComponent } from './project/project.component';
 
 const routes: Routes = [
-  {
-    path: 'about/:slug',
-    component: SingleComponent
-  },
   {
     path: '',
     component: HomeComponent,
@@ -23,6 +20,14 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent
+  },
+  {
+    path: 'projects/:slug',
+    component: ProjectComponent
   }
 ];
 
