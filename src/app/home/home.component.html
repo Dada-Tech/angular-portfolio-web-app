@@ -1,7 +1,9 @@
-<ul>
-  <li *ngFor="let post of posts">
-    <a ng-class="{'class-name': active}" routerLink="{{post.slug}}">{{post.title.rendered}}</a>
-    - {{post.date | date:'longDate'}}
-    <div [innerHTML]=post.content.rendered></div>
-  </li>
-</ul>
+<div class="masthead">
+<div class="container d-flex h-100 align-items-center">
+  <div class="mx-auto text-center">
+    <h1 class="mx-auto my-0 text-uppercase">David Dada</h1>
+    <h2 class="text-white-50 mx-auto mt-2 mb-5">Full-Stack Developer - Web Developer - Graphic Designer - AutoCAD Drafter</h2>
+    <a href="#" class="btn btn-primary js-scroll-trigger">eskettit</a>
+  </div>
+</div>
+</div>
