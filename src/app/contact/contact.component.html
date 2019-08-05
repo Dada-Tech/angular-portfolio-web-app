@@ -1,34 +1,61 @@
 <h1>Contact Us</h1>
 
-
+<!-- Extended material form grid -->
 <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+  <!-- Grid row -->
+  <div class="form-row">
 
-  <h5 *ngIf="success">Your form is valid!</h5>
-
-  <label>
-    Name:
-    <input type="text" formControlName="name">
-    <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
-      <div *ngIf="messageForm.controls.name.errors.required">Your name is required, bro.</div>
+    <!-- Grid column -->
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label>
+          <input [class.invalid]="messageForm.controls.name.touched && messageForm.controls.name.invalid" formControlName="name" type="text" class="feedback-input form-control" placeholder="Name">
+        </label>
+      </div>
     </div>
-  </label>
+    <!-- Grid column -->
 
-  <label>
-    Message:
-    <textarea formControlName="message"></textarea>
-    <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
-      <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
+    <!-- Grid column -->
+    <div class="col-md-6">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label>
+          <input [class.invalid]="messageForm.controls.email.touched && messageForm.controls.email.invalid" formControlName="email" type="email" class="feedback-input form-control" placeholder="Email">
+        </label>
+      </div>
     </div>
-  </label>
+    <!-- Grid column -->
 
-  <input type="submit" value="Send" class="cta">
+  </div>
+  <!-- Grid row -->
 
+  <!-- Grid row -->
+  <div class="row">
+    <!-- Grid column -->
+    <div class="col-md-12">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label>
+        <input [class.invalid]="messageForm.controls.subject.touched && messageForm.controls.subject.invalid" formControlName="subject" type="text" class="feedback-input form-control" placeholder="subject">
+        </label>
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-12">
+      <!-- Material input -->
+      <div class="md-form form-group">
+        <label>
+          <textarea [class.invalid]="messageForm.controls.message.touched && messageForm.controls.message.invalid" formControlName="message" type="text" class="feedback-input form-control" placeholder="Message"></textarea>
+        </label>
+      </div>
+    </div>
+    <!-- Grid column -->
+  </div>
+  <!-- Grid row -->
+
+  <h5 *ngIf="success">Message Recieved. I will be in touch.</h5>
+  <button type="submit" class="btn btn-primary btn-md">Submit</button>
 </form>
-
-<div *ngIf="submitted" class="results">
-  <strong>Name:</strong>
-  <span>{{ messageForm.controls.name.value }}</span>
-
-  <strong>Message:</strong>
-  <span>{{ messageForm.controls.message.value }}</span>
-</div>
