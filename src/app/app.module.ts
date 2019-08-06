@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { ProjectComponent } from './project/project.component';
     HomeComponent,
     ContactComponent,
     ProjectsComponent,
-    ProjectComponent
   ],
   imports: [
     BrowserModule,

@@ -36,7 +36,8 @@ export class PostsService {
 }
 
 loadPosts(): Observable<Array<Post>> {
-const url = 'https://divinecustomcakes.com/wp-json/wp/v2/posts'; // I used my wordpress site at "localhost/xo/""
+const url = 'https://divinecustomcakes.com/wp-json/wp/v2/posts';
+// const url = 'https://hellboundbloggers.com/wp-json/wp/v2/posts';
 
 return this._http.get<Array<Post>>(url);
 }
@@ -59,7 +60,6 @@ public getPost(slug: string): Observable<Post> {
               observer.error(error);
           }
       );
-
   });
 }
 

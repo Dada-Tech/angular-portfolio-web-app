@@ -3,6 +3,6 @@
   <li *ngFor="let post of posts">
     <a ng-class="{'class-name': active}" routerLink="{{post.slug}}">{{post.title.rendered}}</a>
     - {{post.date | date:'longDate'}}
-    <div [innerHTML]=post.content.rendered></div>
+    <div>{{post.acf.title_languages}}</div>
   </li>
 </ul>
