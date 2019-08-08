@@ -7,6 +7,7 @@ import {Post} from '../home/home.component';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
+
 export class ProjectsComponent implements OnInit {
   posts: Array<Post>;
 

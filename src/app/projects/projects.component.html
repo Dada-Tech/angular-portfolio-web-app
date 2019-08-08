@@ -7,27 +7,23 @@
   </li>
 </ul>
 
-<div class="container mt-3">
-  <div class="row">
-    <div class="card-deck">
-      <div class="card mb-4">
+
+
+<div
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutGap="32px"
+  fxLayoutAlign="flex-start">
+  <ng-container *ngFor="let _ of [1,2,3,4,5,6]">
+    <div class="wrap my-auto">
+      <div class="text-center card-c"
+           fxFlex="0 1 calc(33.3% - 32px)"
+           fxFlex.lt-md="0 1 calc(50% - 32px)"
+           fxFlex.lt-sm="100%"
+      >
         <img class="card-img-top" src="./assets/img/sample-icon-1.png" alt="Card image cap 1">
-        <div class="card-img-overlay my-auto reveal">
-          <div class="card-body">
-            <h5 class="card-title text-center">Card title</h5>
-            <p class="card-text text-center">Graphic Design</p>
-          </div>
-        </div>
-      </div>
-      <div class="card mb-4">
-        <img class="card-img-top" src="./assets/img/sample-icon-2.png" alt="Card image cap 2">
-        <div class="card-img-overlay my-auto reveal">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase text-muted text-center font-weight-lighter">Divine Cakes</h5>
-            <p class="card-text text-uppercase text-center">Graphic Design</p>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
 </div>
+
