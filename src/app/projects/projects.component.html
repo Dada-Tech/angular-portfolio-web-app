@@ -8,6 +8,9 @@
 </ul>
 
 
+<div class="test" #test>Hello</div>
+<div class="test" #test1>He22o</div>
+<div ng-class="{'class-name': test}" routerLink>He22o</div>
 
 <div
   fxLayout="row wrap"
@@ -16,7 +19,7 @@
   fxLayoutAlign="flex-start">
   <ng-container *ngFor="let _ of [1,2,3,4,5,6]">
     <div class="wrap my-auto">
-      <div class="text-center card-c"
+      <div class="text-center card-c reveal"
            fxFlex="0 1 calc(33.3% - 32px)"
            fxFlex.lt-md="0 1 calc(50% - 32px)"
            fxFlex.lt-sm="100%"
