@@ -1,6 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
-
-import {AfterViewInit, Directive, QueryList, ViewChildren} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {PostsService} from '../services/posts.service';
 import {Post} from '../home/home.component';
@@ -14,20 +12,15 @@ import {Post} from '../home/home.component';
 
 export class ProjectsComponent implements OnInit {
 
-  constructor(private postService: PostsService, private elRef: ElementRef) { }
+  constructor(private postService: PostsService) { }
   temp_class;
   posts: Array<Post>;
 
   ngOnInit() {
     this.loadPosts();
-    // console.log(this.elRef.nativeElement.querySelectorAll('.test'));
-    this.elRef.nativeElement.querySelector('.test').className = 'test2';
-    console.log(this.elRef.nativeElement.querySelector('.test'));
-    console.log(this.elRef.nativeElement.querySelector('.test2'));
   }
 
-  // specific element that was triggered
-
+  // raise first child img component using CSS class
   cardRaise($event) {
     this.temp_class = $event.target.querySelector('img');
     if (this.temp_class) {
@@ -35,6 +28,7 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
+  // lower first child img component using CSS class
   cardLower($event) {
     this.temp_class = $event.target.querySelector('img');
     if (this.temp_class) {
