@@ -50,4 +50,14 @@
   top: -40px;
 }
 
+.hovered {
+  transition: all 0.1s ease-out;
+  top: -40px;
+}
+
+.lowered {
+  transition: all 0.1s ease-out;
+  top: 0;
+}
+
 /*# sourceMappingURL=projects.component.css.map */

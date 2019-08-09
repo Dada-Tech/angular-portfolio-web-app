@@ -51,8 +51,15 @@ $cardHeight : 200px;
   }
 }
 
+.hovered {
+  transition: all .1s ease-out;
+  top: -40px;
+}
 
-
+.lowered {
+  transition: all .1s ease-out;
+  top: 0;
+}
 
 
 

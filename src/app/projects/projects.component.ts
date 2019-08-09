@@ -15,6 +15,7 @@ import {Post} from '../home/home.component';
 export class ProjectsComponent implements OnInit {
 
   constructor(private postService: PostsService, private elRef: ElementRef) { }
+  temp_class;
   posts: Array<Post>;
 
   ngOnInit() {
@@ -25,6 +26,21 @@ export class ProjectsComponent implements OnInit {
     console.log(this.elRef.nativeElement.querySelector('.test2'));
   }
 
+  // specific element that was triggered
+
+  cardRaise($event) {
+    this.temp_class = $event.target.querySelector('img');
+    if (this.temp_class) {
+      this.temp_class.className += ' hovered';
+    }
+  }
+
+  cardLower($event) {
+    this.temp_class = $event.target.querySelector('img');
+    if (this.temp_class) {
+      this.temp_class.className = this.temp_class.className.replace(/\b hovered\b/g, '');
+    }
+  }
 
   loadPosts() {
     this.postService.loadPosts().subscribe(

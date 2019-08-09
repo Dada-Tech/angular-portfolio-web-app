@@ -8,9 +8,9 @@
 </ul>
 
 
-<div class="test" #test>Hello</div>
-<div class="test" #test1>He22o</div>
-<div ng-class="{'class-name': test}" routerLink>He22o</div>
+<div class="test">Hello</div>
+<div class="test" >He22o</div>
+<div ng-c lass="{'class-name': test}" routerLink>He22o</div>
 
 <div
   fxLayout="row wrap"
@@ -19,12 +19,14 @@
   fxLayoutAlign="flex-start">
   <ng-container *ngFor="let _ of [1,2,3,4,5,6]">
     <div class="wrap my-auto">
-      <div class="text-center card-c reveal"
+      <div (mouseout)="cardLower($event)"
+        (mouseover)="cardRaise($event)"
+        class="text-center card-c"
            fxFlex="0 1 calc(33.3% - 32px)"
            fxFlex.lt-md="0 1 calc(50% - 32px)"
            fxFlex.lt-sm="100%"
       >
-        <img class="card-img-top" src="./assets/img/sample-icon-1.png" alt="Card image cap 1">
+        <img class="card-img-top reveal" src="./assets/img/sample-icon-1.png" alt="Card image cap 1">
       </div>
     </div>
   </ng-container>
