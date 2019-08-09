@@ -1,15 +1,17 @@
-$cardWidth : 200px;
-$cardHeight : 200px;
+$cardWidth : 250px;
+$cardHeight : 250px;
 
 .cardList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  // justify-content: flex-start;
+  justify-content: space-between;
 }
 /* Column Gap */
 .cardList > * {
   box-sizing: border-box;
+  
 }
 .cardList > *:not(:last-child) {
   margin-right: 32px;
@@ -19,29 +21,33 @@ $cardHeight : 200px;
   flex: 0 1 calc(33.3% - 32px);
 }
 
-.wrap, .card-c {
+.wrap, .card {
   min-height:$cardHeight;
   max-height:$cardHeight;
   min-width: $cardWidth;
   max-width: $cardWidth;
 }
 
-.card-c {
+.card {
   display: block;
   border-radius: 8px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 .card-img-top {
   object-fit: cover;
   position: relative;
   top: -20px;
   width: 90%;
-  height: 180px;
+  height: 200px;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-infotext {
+  position: relative;
+  top: -10px;
 }
 
 .reveal {
@@ -60,7 +66,6 @@ $cardHeight : 200px;
   transition: all .1s ease-out;
   top: 0;
 }
-
 
 
 
