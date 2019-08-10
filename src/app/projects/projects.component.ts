@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {PostsService} from '../services/posts.service';
 import {Post} from '../home/home.component';
+import { ModalService } from '../_modal';
 
 
 @Component({
@@ -12,7 +13,7 @@ import {Post} from '../home/home.component';
 
 export class ProjectsComponent implements OnInit {
 
-  constructor(private postService: PostsService) { }
+  constructor(private postService: PostsService, private modalService: ModalService) { }
   temp_class;
   posts: Array<Post>;
 
@@ -43,5 +44,13 @@ export class ProjectsComponent implements OnInit {
         console.log(this.posts);
       }
     );
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 }

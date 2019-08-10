@@ -1,0 +1,9 @@
+﻿<div class="jw-modal">
+    <div class="jw-modal-body">
+      <h1>TEST CONTENT</h1>
+      <div>{{id}}</div>
+        <ng-content></ng-content>
+      <button (click)=" this.modalService.close(id);">Close</button>
+    </div>
+</div>
+<div class="jw-modal-background"></div>

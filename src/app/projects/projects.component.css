@@ -65,4 +65,57 @@
   top: 0;
 }
 
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(100%);
+}
+
+.d-block {
+  object-fit: cover;
+  height: 400px;
+  width: 100%;
+}
+
+.carousel, .img-wrap {
+  width: 400px;
+  height: 400px;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-content {
+  width: auto;
+}
+
+.modal-footer {
+  border-top: 2px solid #1A2330;
+  flex-wrap: wrap;
+}
+
+.line-break {
+  width: 100%;
+  border: solid 1px lightgrey;
+}
+
+.modal-footer {
+  max-width: 400px;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal-backdrop.in {
+  opacity: 0.5;
+}
+
 /*# sourceMappingURL=projects.component.css.map */

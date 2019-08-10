@@ -16,6 +16,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ModalModule } from './_modal';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ModalModule
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
