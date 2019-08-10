@@ -50,7 +50,14 @@ $cardHeight : 250px;
   top: -10px;
 }
 
+
+
+.card > *{
+  pointer-events: none;
+}
+
 .reveal {
+  pointer-events: all;
   transition: all .1s ease-out;
   &:hover {
     top: -40px;
@@ -66,6 +73,9 @@ $cardHeight : 250px;
   transition: all .1s ease-out;
   top: 0;
 }
+
+
+
 
 
 
@@ -121,6 +131,7 @@ $cardHeight : 250px;
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
 }
+
 
 .modal-backdrop.in {
   opacity: 0.5;

@@ -16,6 +16,7 @@ export class ProjectsComponent implements OnInit {
   constructor(private postService: PostsService, private modalService: ModalService) { }
   temp_class;
   posts: Array<Post>;
+  temp_id;
 
   ngOnInit() {
     this.loadPosts();
@@ -29,7 +30,8 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
-  // lower first child img component using CSS class
+  // lower first child img component using CSS class. null when floating card is clicked not parent
+  // disabling child mouse events so no check needed
   cardLower($event) {
     this.temp_class = $event.target.querySelector('img');
     if (this.temp_class) {
@@ -52,5 +54,13 @@ export class ProjectsComponent implements OnInit {
 
   closeModal(id: string) {
     this.modalService.close(id);
+  }
+
+  // get the jw-modal related to card
+  searchOpen($event) {
+    this.temp_id = $event.target;
+    if (this.temp_id) {
+      this.openModal(this.temp_id.id.replace('card-', ''));
+    }
   }
 }

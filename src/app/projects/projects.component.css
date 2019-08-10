@@ -48,7 +48,12 @@
   top: -10px;
 }
 
+.card > * {
+  pointer-events: none;
+}
+
 .reveal {
+  pointer-events: all;
   transition: all 0.1s ease-out;
 }
 .reveal:hover {
