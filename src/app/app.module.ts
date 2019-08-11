@@ -17,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalModule } from './_modal';
+import { SkillsComponent } from './skills/skills.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ModalModule } from './_modal';
     HomeComponent,
     ContactComponent,
     ProjectsComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,
