@@ -36,7 +36,7 @@ import { ModalModule } from './_modal';
     NgbModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    ModalModule
+    ModalModule,
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

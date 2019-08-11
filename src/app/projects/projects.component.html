@@ -22,8 +22,8 @@
            fxFlex.lt-sm="100%"
            id="card-{{i+1}}"
       >
-        <jw-modal id="{{i+1}}" [cardObj]="post"></jw-modal>
-        <img class="card-img-top reveal" src="{{post.acf.company_featured_image}}" alt="Card image cap 1">
+        <app-jw-modal id="{{i+1}}" [cardObj]="post"></app-jw-modal>
+        <img class="card-img-top" src="{{post.acf.company_featured_image}}" alt="Card image cap 1">
         <div class="card-infotext">
           <div>{{post.title.rendered}}</div>
           <div>{{post.acf.title_languages}}</div>

@@ -3,64 +3,44 @@
 app-jw-modal {
   /* modals are hidden by default */
   display: none;
-
-  .jw-modal {
-    /* modal container fixed across whole screen */
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    /* z-index must be higher than .jw-modal-background */
-    z-index: 1000;
-
-    /* enables scrolling for tall modals */
-    overflow: auto;
-
-    .jw-modal-body {
-
-      background: #fff;
-      width: 500px;
-
-      /* margin exposes part of the modal background */
-      margin: 0 auto;
-      text-align: center;
-    }
-  }
-
   /* modal background fixed across whole screen */
-  .jw-modal-background {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    /* semi-transparent black  */
-    background-color: #000;
-    opacity: 0.75;
-
-    /* z-index must be below .jw-modal and above everything else  */
-    z-index: 900;
-  }
+}
+app-jw-modal .jw-modal {
+  /* modal container fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* z-index must be higher than .jw-modal-background */
+  z-index: 1000;
+  /* enables scrolling for tall modals */
+  overflow: auto;
+}
+app-jw-modal .jw-modal .jw-modal-body {
+  background: #fff;
+  width: 500px;
+  /* margin exposes part of the modal background */
+  margin: 0 auto;
+  text-align: center;
+}
+app-jw-modal .jw-modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* semi-transparent black  */
+  background-color: #000;
+  opacity: 0.75;
+  /* z-index must be below .jw-modal and above everything else  */
+  z-index: 900;
 }
 
 .jw-modal-open {
   /* body overflow is hidden to hide main scrollbar when modal window is open */
   overflow: hidden;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Slideshow container */
 .slideshow-container {
@@ -77,11 +57,11 @@ app-jw-modal {
 }
 
 .img-wrapper {
-  min-width:500px;
+  min-width: 500px;
   max-width: 500px;
   width: 500px;
   height: 500px;
-  display:flex;
+  display: flex;
 }
 
 .prev, .next {
@@ -114,7 +94,7 @@ app-jw-modal {
 }
 
 .dot-container {
-  text-align:center;
+  text-align: center;
   height: 30px;
 }
 
@@ -142,27 +122,20 @@ app-jw-modal {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-
-.button-panel {
-}
-
-.button-panel a {
-}
-
-
-
-
-
-
-
-
-
+/*# sourceMappingURL=modal.component.css.map */

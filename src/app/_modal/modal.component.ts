@@ -1,19 +1,25 @@
-﻿import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
+﻿import {AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {ModalService} from './modal.service';
 
-import { ModalService } from './modal.service';
 
 @Component({
-    selector: 'jw-modal',
-    templateUrl: 'modal.component.html',
-    styleUrls: ['modal.component.scss'],
+    selector: 'app-jw-modal',
+    templateUrl: './modal.component.html',
+    styleUrls: ['./modal.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class ModalComponent implements OnInit, OnDestroy {
+
+export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
     @Input() id: string;
     @Input() cardObj;
     private element: any;
+    imageUrls = [1, 2, 3].map(() => `https://picsum.photos/600/800?random&t=${Math.random()}`);
+    imageArr;
+    dotArr;
+    imageIndex = 1;
+    image;
 
-    constructor(private modalService: ModalService, private el: ElementRef) {
+  constructor(private modalService: ModalService, private el: ElementRef) {
         this.element = el.nativeElement;
     }
 
@@ -38,6 +44,10 @@ export class ModalComponent implements OnInit, OnDestroy {
         this.modalService.add(this);
     }
 
+    ngAfterViewInit(): void {
+        this.initImg();
+    }
+
     // remove self from modal service when component is destroyed
     ngOnDestroy(): void {
         this.modalService.remove(this.id);
@@ -55,4 +65,41 @@ export class ModalComponent implements OnInit, OnDestroy {
         this.element.style.display = 'none';
         document.body.classList.remove('jw-modal-open');
     }
+
+  initImg() {
+    this.imageArr = document.getElementsByClassName('img-' + this.id) as HTMLCollectionOf<HTMLImageElement>;
+    this.dotArr = document.getElementsByClassName('dot-' + this.id) as HTMLCollectionOf<HTMLImageElement>;
+    if (this.imageArr[0] && this.dotArr[0]) {
+      for (let i = 0; i < this.imageArr.length; i++) {
+        this.imageArr[i].src = this.imageUrls[i];
+      }
+      this.showImg(1);
+    }
+  }
+
+  showImg(n) {
+    let i;
+    if (n > this.imageArr.length) {
+      this.imageIndex = 1;
+    } else if (n < 1) {
+      this.imageIndex = this.imageArr.length;
+    } else {
+      this.imageIndex = n;
+    }
+
+    for (i = 0; i < this.imageArr.length; i++) {
+      this.imageArr[i].style.display = 'none';
+    }
+
+    for (i = 0; i < this.dotArr.length; i++) {
+      this.dotArr[i].className = this.dotArr[i].className.replace(' dot-active', '');
+    }
+
+    this.imageArr[this.imageIndex - 1].style.display = 'block';
+    this.dotArr[this.imageIndex - 1].className += ' dot-active';
+  }
+
+  nextImg(n) {
+    this.showImg(this.imageIndex += n);
+  }
 }

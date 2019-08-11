@@ -16,7 +16,6 @@ export class ProjectsComponent implements OnInit {
   constructor(private postService: PostsService, private modalService: ModalService) { }
   temp_class;
   posts: Array<Post>;
-  temp_id;
 
   ngOnInit() {
     this.loadPosts();
@@ -56,11 +55,8 @@ export class ProjectsComponent implements OnInit {
     this.modalService.close(id);
   }
 
-  // get the jw-modal related to card
+  // get the jw-modal id related to card. where card-x , modal id is x
   searchOpen($event) {
-    this.temp_id = $event.target;
-    if (this.temp_id) {
-      this.openModal(this.temp_id.id.replace('card-', ''));
-    }
+    this.openModal($event.target.id.replace('card-', ''));
   }
 }
