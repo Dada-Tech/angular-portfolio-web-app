@@ -18,9 +18,8 @@
       <hr>
       <div>{{cardObj.acf.company_description}}</div>
 
-<!-- todo: link going out -->
       <div class="button-panel">
-        <a><button type="button" class="btn btn-primary">Visit Site</button></a>
+        <a><button (click)="this.followLink()" type="button" class="btn btn-primary">Visit Site</button></a>
         <button (click)="this.modalService.close(id);" type="button" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

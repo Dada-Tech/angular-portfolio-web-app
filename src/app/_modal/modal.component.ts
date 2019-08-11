@@ -118,4 +118,8 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
     nextImg(n) {
       this.showImg(this.imageIndex += n);
     }
+
+    followLink() {
+      window.open('//' + this.cardObj.acf.live_link);
+    }
 }
