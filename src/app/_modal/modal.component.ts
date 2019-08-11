@@ -13,7 +13,8 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
     @Input() id: string;
     @Input() cardObj;
     private element: any;
-    imageUrls = [1, 2, 3].map(() => `https://picsum.photos/600/800?random&t=${Math.random()}`);
+    imageUrls1 = [1, 2, 3].map(() => `https://picsum.photos/600/800?random&t=${Math.random()}`);
+    imageUrls = [];
     imageArr;
     dotArr;
     imageIndex = 1;
@@ -42,6 +43,7 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
 
         // add self (this modal instance) to the modal service so it's accessible from controllers
         this.modalService.add(this);
+        this.cmsToArr();
     }
 
     ngAfterViewInit(): void {
@@ -66,40 +68,54 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
         document.body.classList.remove('jw-modal-open');
     }
 
-  initImg() {
-    this.imageArr = document.getElementsByClassName('img-' + this.id) as HTMLCollectionOf<HTMLImageElement>;
-    this.dotArr = document.getElementsByClassName('dot-' + this.id) as HTMLCollectionOf<HTMLImageElement>;
-    if (this.imageArr[0] && this.dotArr[0]) {
-      for (let i = 0; i < this.imageArr.length; i++) {
-        this.imageArr[i].src = this.imageUrls[i];
+    cmsToArr() {
+      let i = 1;
+      let temp_img;
+
+      while (this.cardObj.acf.hasOwnProperty('company_image_' + i)) {
+        temp_img = this.cardObj.acf['company_image_' + i];
+
+        if (temp_img && (temp_img.length > 5)) {
+        this.imageUrls[i - 1] = temp_img;
+        }
+        i++;
       }
-      this.showImg(1);
-    }
-  }
-
-  showImg(n) {
-    let i;
-    if (n > this.imageArr.length) {
-      this.imageIndex = 1;
-    } else if (n < 1) {
-      this.imageIndex = this.imageArr.length;
-    } else {
-      this.imageIndex = n;
     }
 
-    for (i = 0; i < this.imageArr.length; i++) {
-      this.imageArr[i].style.display = 'none';
+    initImg() {
+      this.imageArr = document.getElementsByClassName('img-' + this.id) as HTMLCollectionOf<HTMLImageElement>;
+      this.dotArr = document.getElementsByClassName('dot-' + this.id) as HTMLCollectionOf<HTMLImageElement>;
+      if (this.imageArr[0] && this.dotArr[0]) {
+        for (let i = 0; i < this.imageArr.length; i++) {
+          this.imageArr[i].src = this.imageUrls[i];
+        }
+        this.showImg(1);
+      }
     }
 
-    for (i = 0; i < this.dotArr.length; i++) {
-      this.dotArr[i].className = this.dotArr[i].className.replace(' dot-active', '');
+    showImg(n) {
+      let i;
+      if (n > this.imageArr.length) {
+        this.imageIndex = 1;
+      } else if (n < 1) {
+        this.imageIndex = this.imageArr.length;
+      } else {
+        this.imageIndex = n;
+      }
+
+      for (i = 0; i < this.imageArr.length; i++) {
+        this.imageArr[i].style.display = 'none';
+      }
+
+      for (i = 0; i < this.dotArr.length; i++) {
+        this.dotArr[i].className = this.dotArr[i].className.replace(' dot-active', '');
+      }
+
+      this.imageArr[this.imageIndex - 1].style.display = 'block';
+      this.dotArr[this.imageIndex - 1].className += ' dot-active';
     }
 
-    this.imageArr[this.imageIndex - 1].style.display = 'block';
-    this.dotArr[this.imageIndex - 1].className += ' dot-active';
-  }
-
-  nextImg(n) {
-    this.showImg(this.imageIndex += n);
-  }
+    nextImg(n) {
+      this.showImg(this.imageIndex += n);
+    }
 }
