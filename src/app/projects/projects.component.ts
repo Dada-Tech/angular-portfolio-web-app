@@ -42,7 +42,6 @@ export class ProjectsComponent implements OnInit {
     this.postService.loadPosts().subscribe(
       response => {
         this.posts = response;
-        console.log(this.posts);
       }
     );
   }

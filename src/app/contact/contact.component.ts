@@ -24,14 +24,9 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    if (this.messageForm.invalid) {
-      return;
-    }
-
     // this is where you'd ordinarily connect to back end emailing
 
     this.success = true;
-
   }
 
   ngOnInit() {
