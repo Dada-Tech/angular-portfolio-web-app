@@ -14,19 +14,30 @@ export class ContactComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.messageForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      message: ['', Validators.required],
-      email: ['', Validators.required],
-      subject: ['', Validators.required]
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      message: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.minLength(3)]],
+      subject: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
 
   onSubmit() {
-    this.submitted = true;
+    this.markFormGroupTouched(this.messageForm);
+    if (this.messageForm.valid) {
+      this.submitted = true;
+      // this is where you'd ordinarily connect to back end emailing
+      this.success = true;
+    }
+  }
 
-    // this is where you'd ordinarily connect to back end emailing
+  private markFormGroupTouched(formGroup: FormGroup) {
+    (<any>Object).values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
 
-    this.success = true;
+      if (control.controls) {
+        this.markFormGroupTouched(control);
+      }
+    });
   }
 
   ngOnInit() {
