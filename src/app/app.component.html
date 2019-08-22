@@ -1,6 +1,15 @@
-<app-header></app-header>
-<div class="wrapper">
-<router-outlet></router-outlet>
-</div>
+ <!-- <app-header></app-header> -->
+
+ <div class="container-fluid h-100 p-0">
+   <div class="row h-100 no-gutters">
+     <app-header class="col-12 col-md-auto bg-dark"></app-header>
+     <main class="col">
+       <div class="wrapper">
+         <router-outlet></router-outlet>
+       </div>
+     </main>
+   </div>
+ </div>
+
 <!-- <app-footer></app-footer> -->
 

@@ -1,4 +1,6 @@
 .wrapper {
+  height: 100%;
+  width: 100%;
   background: #304352;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #d7d2cc, #304352);
