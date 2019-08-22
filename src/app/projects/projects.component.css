@@ -46,6 +46,7 @@
 .card-infotext {
   position: relative;
   top: -10px;
+  font-size: 11px;
 }
 
 .card > * {
