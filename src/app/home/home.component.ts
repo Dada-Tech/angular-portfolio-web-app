@@ -1,30 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import {PostsService} from '../services/posts.service';
-export interface Post {
-  title: string;
-  content: string;
-  date: string;
-}
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  posts: Array<Post>;
 
-  constructor(private postService: PostsService) { }
+export class HomeComponent implements OnInit {
+  @ViewChild('canvas', {static: true}) canvas !: ElementRef['nativeElement'];
+
+  constructor() { }
 
   ngOnInit() {
-    this.loadPosts();
+    console.log(this.canvas['nativeElement'].offsetHeight);
+    console.log(this.canvas['nativeElement'].offsetWidth);
   }
-
-  loadPosts() {
-    this.postService.loadPosts().subscribe(
-      response => {
-        this.posts = response;
-      }
-    );
-  }
-
 }

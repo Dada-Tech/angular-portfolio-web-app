@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {PostsService} from '../services/posts.service';
-import {Post} from '../home/home.component';
 import { ModalService } from '../_modal';
-
 
 @Component({
   selector: 'app-projects',
@@ -15,7 +13,7 @@ export class ProjectsComponent implements OnInit {
 
   constructor(private postService: PostsService, private modalService: ModalService) { }
   temp_class;
-  posts: Array<Post>;
+  posts;
 
   ngOnInit() {
     this.loadPosts();
