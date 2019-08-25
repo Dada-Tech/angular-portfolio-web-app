@@ -1,8 +1,9 @@
 @import 'variables';
 
 .hero-banner{
-  background: url(../../assets/img/bg-masthead.jpg) left center no-repeat;
-  background-size: cover;
+  // background: url(../../assets/img/landing.png) left center no-repeat;
+  //background: url(../../assets/img/bg-masthead.jpg) left center no-repeat;
+  // background-size: cover;
   position: relative;
   z-index: 1;
   padding-top: 130px;
@@ -17,7 +18,7 @@
     padding-top: 290px;
     padding-bottom: 220px;
   }
-
+  /*
   &::after{
     content: "";
     display: block;
@@ -27,13 +28,13 @@
     width: 100%;
     height: 100%;
     //background-color: $black;
-    background: #16222A;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #daf1fb, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #daf1fb, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #4d4d4d;
+    background: -webkit-linear-gradient(to top, #daf1fb, #4d4d4d);
+    background: linear-gradient(to top, #daf1fb, #4d4d4d);
 
     z-index: -1;
-    opacity: .9;
-  }
+    opacity: .4;
+  }*/
 
   h1{
     color: $white;
@@ -50,11 +51,23 @@
   }
 }
 
+.hero-title {
+  color: #dddddd;
+  font-family: Trebuchet, serif;
+  text-shadow: 2px 2px 4px #2B2B2B;
+  font-weight: bolder;
+  font-size: 8vh;
+}
+
 .hero-subtitle{
+  font-family: Helvetica, serif;
+  font-weight: 500;
+  color: #2B2B2B;
   max-width: 550px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 20px;
+  font-size: 3vh;
 
   @media(min-width: 992px){
     margin-bottom: 38px;

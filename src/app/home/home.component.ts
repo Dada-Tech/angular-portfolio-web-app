@@ -7,12 +7,9 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
-  @ViewChild('canvas', {static: true}) canvas !: ElementRef['nativeElement'];
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
-    console.log(this.canvas['nativeElement'].offsetHeight);
-    console.log(this.canvas['nativeElement'].offsetWidth);
   }
 }

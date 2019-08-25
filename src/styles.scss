@@ -1,5 +1,16 @@
 // Variables
 
 html {
-  background: #304352;
+  background: #2B2B2B;
+}
+
+body,html {
+  height: 100%;
+}
+
+.background {
+  background: url(./assets/img/landing.png) fixed center no-repeat;
+  background-size: cover;
+  height: 100%;
+  z-index: 0;
 }
