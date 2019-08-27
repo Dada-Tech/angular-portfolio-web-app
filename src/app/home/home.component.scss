@@ -1,49 +1,27 @@
 @import 'variables';
 
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Montserrat+Alternates&display=swap');
+
+
+
+
 .hero-banner{
   // background: url(../../assets/img/landing.png) left center no-repeat;
   //background: url(../../assets/img/bg-masthead.jpg) left center no-repeat;
   // background-size: cover;
   position: relative;
   z-index: 1;
-  padding-top: 130px;
   padding-bottom: 70px;
+  padding-top: 10px;
 
-  @media(min-width: 600px){
-    padding-top: 190px;
-    padding-bottom: 120px;
+  @media(min-width:767px){
+    padding-top: 215px;
   }
-
-  @media(min-width: 1200px){
-    padding-top: 290px;
-    padding-bottom: 220px;
-  }
-  /*
-  &::after{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    //background-color: $black;
-    background: #4d4d4d;
-    background: -webkit-linear-gradient(to top, #daf1fb, #4d4d4d);
-    background: linear-gradient(to top, #daf1fb, #4d4d4d);
-
-    z-index: -1;
-    opacity: .4;
-  }*/
 
   h1{
     color: $white;
     text-transform: uppercase;
     margin-bottom: 20px;
-
-    @media(min-width: 992px){
-      margin-bottom: 40px;
-    }
   }
 
   > *{
@@ -53,52 +31,19 @@
 
 .hero-title {
   color: #dddddd;
-  font-family: Trebuchet, serif;
+  font-family: 'Montserrat Alternates', cursive;
   text-shadow: 2px 2px 4px #2B2B2B;
   font-weight: bolder;
   font-size: 8vh;
 }
 
-.hero-subtitle{
-  font-family: Helvetica, serif;
+.hero-subtitle {
+  font-family: 'Cinzel', Arial, serif;
   font-weight: 500;
   color: #2B2B2B;
-  max-width: 550px;
+  max-width: 750px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 20px;
   font-size: 3vh;
-
-  @media(min-width: 992px){
-    margin-bottom: 38px;
-  }
-}
-
-.hero-banner-sm{
-  padding-top: 120px;
-  padding-bottom: 50px;
-
-  @media(min-width: 600px){
-    padding-top: 150px;
-    padding-bottom: 80px;
-  }
-
-  @media(min-width: 1200px){
-    padding-top: 240px;
-    padding-bottom: 140px;
-  }
-
-  h1{
-    font-size: 30px;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-
-    @media(min-width: 600px){
-      font-size: 40px;
-    }
-
-    @media(min-width: 1200px){
-      font-size: 50px;
-    }
-  }
 }
