@@ -1,3 +1,12 @@
+@media (min-width: 768px) {
+  .navbar {
+    margin-top: 35vh;
+  }
+}
 
+.nav-link {
+  font-size: 17px;
+  color: #535353 !important;
+}
 
 /*# sourceMappingURL=header.component.css.map */
