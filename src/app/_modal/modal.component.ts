@@ -120,6 +120,6 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     followLink() {
-      // window.open('//' + this.cardObj.acf.live_link);
+      window.open('//' + this.cardObj.acf.live_link);
     }
 }

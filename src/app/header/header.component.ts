@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  appTitle = 'Dada-Tech';
-
   constructor() { }
 
   ngOnInit() {
+  }
+
+  followLink() {
+    window.open('//' + 'www.linkedin.com/in/dadadavid');
   }
 
 }

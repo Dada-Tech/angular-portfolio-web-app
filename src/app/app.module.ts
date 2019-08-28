@@ -18,6 +18,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SkillsComponent } from './skills/skills.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     ModalModule,
+    RouterModule,
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
