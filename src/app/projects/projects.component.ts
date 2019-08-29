@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 
 import {PostsService} from '../services/posts.service';
 
@@ -12,9 +12,14 @@ export class ProjectsComponent implements OnInit {
 
   constructor(private postService: PostsService) { }
   posts;
+  ready = false;
 
   ngOnInit() {
     this.loadPosts();
+  }
+
+  allLoaded(i) {
+    return i === this.posts.length();
   }
 
   loadPosts() {
