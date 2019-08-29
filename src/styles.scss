@@ -1,16 +1,10 @@
 // Variables
 
-html {
-  background: #2B2B2B;
-}
-
-body,html {
-  height: 100%;
-}
-
-.background {
-  background: url(./assets/img/landing.png) fixed center no-repeat;
+body {
+  background: url(./assets/img/landing.png) fixed center repeat-y;
   background-size: cover;
+}
+
+html, body {
   height: 100%;
-  z-index: 0;
 }
