@@ -19,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { RouterModule } from '@angular/router';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RouterModule } from '@angular/router';
     ContactComponent,
     ProjectsComponent,
     SkillsComponent,
+    ProjectComponent,
   ],
   imports: [
     BrowserModule,

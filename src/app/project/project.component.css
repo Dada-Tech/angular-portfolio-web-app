@@ -1,0 +1,75 @@
+.cardList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Column Gap */
+.cardList > * {
+  box-sizing: border-box;
+}
+
+.cardList > *:not(:last-child) {
+  margin-right: 32px;
+}
+
+/* Item sizing */
+.cardListItem {
+  flex: 0 1 calc(33.3% - 32px);
+}
+
+.card {
+  min-height: 250px;
+  max-height: 250px;
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.card {
+  display: block;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-img-top {
+  object-fit: cover;
+  position: relative;
+  top: -20px;
+  width: 90%;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-infotext {
+  position: relative;
+  top: -10px;
+  font-size: 11px;
+}
+
+.card > * {
+  pointer-events: none;
+}
+
+/*
+.reveal {
+  pointer-events: all;
+  transition: all .1s ease-out;
+  &:hover {
+    top: -40px;
+  }
+}
+*/
+.hovered {
+  transition: all 0.1s ease-out;
+  top: -40px;
+}
+
+.lowered {
+  transition: all 0.1s ease-out;
+  top: 0;
+}
+
+/*# sourceMappingURL=project.component.css.map */

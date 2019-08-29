@@ -8,25 +8,7 @@
   fxLayoutGap="32px"
   fxLayoutAlign="flex-start">
   <ng-container *ngFor="let post of posts; index as i">
-    <div *ngFor="let space of [1,2]"><br></div>
-    <div class="wrap my-auto">
-      <div (mouseout)="cardLower($event)"
-           (mouseover)="cardRaise($event)"
-           (click)="searchOpen($event)"
-           class="text-center card"
-           fxFlex="0 1 calc(33.3% - 32px)"
-           fxFlex.lt-md="0 1 calc(50% - 32px)"
-           fxFlex.lt-sm="100%"
-           id="card-{{i+1}}"
-      >
-        <app-jw-modal id="{{i+1}}" [cardObj]="post"></app-jw-modal>
-        <img class="card-img-top" src="{{post.acf.company_featured_image}}" alt="Card image cap 1">
-        <div class="card-infotext">
-          <div>{{post.title.rendered}}</div>
-          <div>{{post.acf.title_languages}}</div>
-        </div>
-      </div>
-    </div>
+    <app-project [index]="i" [post]="post"></app-project>
   </ng-container>
 </div>
 
