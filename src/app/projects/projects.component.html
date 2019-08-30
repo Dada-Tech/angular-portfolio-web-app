@@ -1,12 +1,17 @@
 <h2>PERSONAL PROJECTS</h2>
 <div *ngFor="let space of [1,2]"><br></div>
+  <div [ngClass]="{'showall':!this.alldone,'shownone':this.alldone}">
+    <div class="spinner-border text-secondary" role="status"></div>
+  </div>
 <div
   fxLayout="row wrap"
   fxLayout.lt-sm="column"
   fxLayoutGap="32px"
   fxLayoutAlign="flex-start">
   <ng-container *ngFor="let post of posts; index as i">
-    <app-project [index]="i" [post]="post"></app-project>
+    <div [ngClass]="{'showall':this.alldone,'shownone':!this.alldone}">
+      <app-project (exampleOutput)="exampleMethodParent($event)" [index]="i" [post]="post"></app-project>
+    </div>
   </ng-container>
 </div>
 

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterContentInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { ModalService } from '../_modal';
 
 @Component({
@@ -6,14 +6,21 @@ import { ModalService } from '../_modal';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss']
 })
-export class ProjectComponent implements OnInit {
-
+export class ProjectComponent implements OnInit, AfterContentInit {
   constructor(private modalService: ModalService) { }
   temp_class;
   @Input() post;
   @Input() index;
 
+  @Output() exampleOutput = new EventEmitter<string>();
+
   ngOnInit() {
+  }
+
+  ngAfterContentInit() {
+    setTimeout(() => {
+      this.exampleOutput.emit(this.index);
+    });
   }
 
   // raise first child img component using CSS class

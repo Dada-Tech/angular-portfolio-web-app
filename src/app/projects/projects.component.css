@@ -5,4 +5,12 @@
   max-width: 250px;
 }
 
+.shownone {
+  display: none;
+}
+
+.showall {
+  display: block;
+}
+
 /*# sourceMappingURL=projects.component.css.map */
