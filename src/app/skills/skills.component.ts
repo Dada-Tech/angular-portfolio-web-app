@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FollowlinkService } from '../services/followlink.service';
 
 @Component({
   selector: 'app-skills',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private followlink: FollowlinkService) { }
 
   ngOnInit() {
   }

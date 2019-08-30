@@ -1,5 +1,6 @@
 ﻿import {AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ModalService} from './modal.service';
+import { FollowlinkService } from '../services/followlink.service';
 
 
 @Component({
@@ -13,14 +14,12 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
     @Input() id: string;
     @Input() cardObj;
     private element: any;
-    imageUrls1 = [1, 2, 3].map(() => `https://picsum.photos/600/800?random&t=${Math.random()}`);
     imageUrls = [];
     imageArr;
     dotArr;
     imageIndex = 1;
-    image;
 
-  constructor(private modalService: ModalService, private el: ElementRef) {
+  constructor(private modalService: ModalService, private el: ElementRef, private followlink: FollowlinkService) {
         this.element = el.nativeElement;
     }
 
@@ -117,9 +116,5 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
 
     nextImg(n) {
       this.showImg(this.imageIndex += n);
-    }
-
-    followLink() {
-      window.open('//' + this.cardObj.acf.live_link);
     }
 }

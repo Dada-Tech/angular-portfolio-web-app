@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+// import { Router, RouterModule } from '@angular/router';
+import { FollowlinkService } from '../services/followlink.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,9 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private followlink: FollowlinkService) { }
 
   ngOnInit() {
-  }
-
-  followLink() {
-    window.open('//' + 'www.linkedin.com/in/dadadavid');
   }
 
 }

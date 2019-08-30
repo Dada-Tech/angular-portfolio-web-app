@@ -19,7 +19,7 @@
 
       <div class="button-panel">
         <div *ngIf="cardObj.acf.live_link">
-        <button (click)="this.followLink()" type="button" class="btn btn-primary">Visit Site</button>
+        <button (click)="this.followlink.open(cardObj.acf.live_link)" type="button" class="btn btn-primary">Visit Site</button>
         </div>
         <div *ngIf="cardObj.acf.link_last_accessed">{{cardObj.acf.link_last_accessed}}</div>
         <button (click)="this.modalService.close(id);" type="button" class="close" aria-label="Close">

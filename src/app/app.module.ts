@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalModule } from './_modal';
 
 import { PostsService } from './services/posts.service';
+import { FollowlinkService } from './services/followlink.service';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -43,7 +44,7 @@ import { ProjectComponent } from './project/project.component';
     ModalModule,
     RouterModule,
   ],
-  providers: [PostsService],
+  providers: [PostsService, FollowlinkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

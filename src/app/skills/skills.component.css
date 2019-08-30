@@ -4,4 +4,13 @@
   color: #2B2B2B;
 }
 
+.certificate-link {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.card-body {
+  font-size: 15px;
+}
+
 /*# sourceMappingURL=skills.component.css.map */
