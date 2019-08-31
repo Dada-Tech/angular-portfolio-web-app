@@ -12,3 +12,21 @@
 .card-body {
   font-size: 15px;
 }
+
+.card {
+  background-color: transparent;
+  &::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    opacity: .8;
+  }
+}
+
+

@@ -28,10 +28,11 @@
   width: 20px;
   max-width: 20px;
   height: auto;
+  margin-top: -4px;
 }
 @media (min-width: 768px) {
   .linkedin-wrapper {
-    margin-top: 140px;
+    margin-top: 25vh;
   }
 }
 
