@@ -1,12 +1,8 @@
 <div *ngFor="let space of [1,2]"><br></div>
-<div class="wrap my-auto">
   <div (mouseout)="cardLower($event)"
        (mouseover)="cardRaise($event)"
        (click)="searchOpen($event)"
        class="text-center card"
-       fxFlex="0 1 calc(33.3% - 32px)"
-       fxFlex.lt-md="0 1 calc(50% - 32px)"
-       fxFlex.lt-sm="100%"
        id="card-{{this.index+1}}"
   >
     <app-jw-modal id="{{this.index+1}}" [cardObj]="this.post"></app-jw-modal>
@@ -16,4 +12,3 @@
       <div>{{this.post.acf.title_languages}}</div>
     </div>
   </div>
-</div>

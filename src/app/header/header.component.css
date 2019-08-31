@@ -18,21 +18,31 @@
   color: white !important;
 }
 
-.active {
-  border-top: 0.5px solid #ababab;
-  border-bottom: 0.5px solid #ababab;
+@media (min-width: 768px) {
+  .active {
+    border-top: 0.5px solid #ababab;
+    border-bottom: 0.5px solid #ababab;
+  }
 }
 
-.linkedin-wrapper {
+.linkedin-wrapper, .github-wrapper {
   cursor: pointer;
   width: 20px;
   max-width: 20px;
   height: auto;
-  margin-top: -4px;
+}
+
+@media (min-width: 768px) {
+  .github-wrapper {
+    margin-top: 25vh;
+  }
+}
+.github-wrapper > img {
+  margin-left: -5px;
 }
 @media (min-width: 768px) {
-  .linkedin-wrapper {
-    margin-top: 25vh;
+  .github-wrapper > img {
+    margin-left: 0;
   }
 }
 

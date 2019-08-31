@@ -22,17 +22,29 @@
 
 
 .active {
+  @media(min-width: 768px) {
   border-top: .5px solid #ababab;
   border-bottom: .5px solid #ababab;
+  }
 }
 
-.linkedin-wrapper {
+.linkedin-wrapper, .github-wrapper {
   cursor: pointer;
   width:20px;
   max-width:20px;
   height: auto;
-  margin-top: -4px;
+}
+
+.github-wrapper {
   @media(min-width: 768px) {
     margin-top: 25vh;
   }
+  > img {
+    margin-left: -5px;
+    @media(min-width: 768px) {
+      margin-left: 0;
+    }
+  }
 }
+
+

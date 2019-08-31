@@ -4,11 +4,9 @@
   </div>
 <div
   fxLayout="row wrap"
-  fxLayout.lt-sm="column"
-  fxLayoutGap="32px"
-  fxLayoutAlign="flex-right">
+  fxLayoutAlign="center center">
   <ng-container *ngFor="let post of posts; index as i">
-    <div [ngClass]="{'showall p-4':this.alldone,'shownone':!this.alldone}">
+    <div [ngClass]="{'showall':this.alldone,'shownone':!this.alldone}">
       <app-project (exampleOutput)="exampleMethodParent($event)" [index]="i" [post]="post"></app-project>
     </div>
   </ng-container>
