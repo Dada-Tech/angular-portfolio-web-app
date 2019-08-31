@@ -31,6 +31,10 @@ app-jw-modal .jw-modal .jw-modal-body {
     width: 320px;
   }
 }
+app-jw-modal .jw-modal .jw-modal-body > * {
+  font-family: Helvetica, serif;
+  color: #2B2B2B;
+}
 app-jw-modal .jw-modal-background {
   position: fixed;
   top: 0;
@@ -116,7 +120,7 @@ app-jw-modal .jw-modal-background {
 }
 
 .next:hover, .prev:hover {
-  color: black !important;
+  color: #303030 !important;
 }
 
 .dot-container {
@@ -136,7 +140,7 @@ app-jw-modal .jw-modal-background {
 }
 
 .dot:hover, .dot-active {
-  background-color: black;
+  background-color: #303030;
 }
 
 /* Fading animation */
@@ -162,6 +166,31 @@ app-jw-modal .jw-modal-background {
   to {
     opacity: 1;
   }
+}
+.modal-site-btn {
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: transform 1s;
+}
+.modal-site-btn:hover {
+  transform: translate(0px, -5px);
+}
+
+.modal-last-access {
+  font-size: 13px;
+  font-weight: 700;
+  color: #535353;
+}
+
+.modal-divider {
+  margin: 4px 25px;
+  border: 0.5px solid black;
+  opacity: 0.1;
+}
+
+.modal-company-description {
+  margin: 4px 20px 20px;
 }
 
 /*# sourceMappingURL=modal.component.css.map */

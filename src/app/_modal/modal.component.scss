@@ -38,6 +38,10 @@ app-jw-modal {
         max-width: $modal-width-small;
         width: $modal-width-small;
       }
+      > * {
+        font-family: Helvetica, serif;
+        color: #2B2B2B;
+      }
     }
   }
 
@@ -127,7 +131,7 @@ app-jw-modal {
 }
 
 .next:hover, .prev:hover {
-  color: black !important;
+  color: #303030 !important;
 }
 
 .dot-container {
@@ -147,7 +151,7 @@ app-jw-modal {
 }
 
 .dot:hover, .dot-active {
-  background-color: black;
+  background-color: #303030;
 }
 
 /* Fading animation */
@@ -168,10 +172,29 @@ app-jw-modal {
   to {opacity: 1}
 }
 
+.modal-site-btn {
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: transform 1s;
 
+  &:hover {
+    transform: translate(0px, -5px);
+  }
+}
 
+.modal-last-access {
+  font-size: 13px;
+  font-weight: 700;
+  color: #535353;
+}
 
+.modal-divider {
+  margin: 4px 25px;
+  border: .5px solid black;
+  opacity: .1;
+}
 
-
-
-
+.modal-company-description {
+  margin: 4px 20px 20px;
+}

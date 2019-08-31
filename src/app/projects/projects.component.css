@@ -13,4 +13,8 @@
   display: initial;
 }
 
+.cardcontainer {
+  transition: 0.6s ease !important;
+}
+
 /*# sourceMappingURL=projects.component.css.map */

@@ -8,24 +8,49 @@
         <a class="prev" (click)="this.nextImg(-1)">&#10094;</a>
         <a class="next" (click)="this.nextImg(1)">&#10095;</a>
       </div>
-      <div class="dot-container">
-        <span *ngFor="let dot of imageUrls; index as i" class="dot dot-{{id}}" (click)="this.showImg(i+1)"></span>
+      <div class="dot-container mt-1">
+        <span *ngFor="let dot of imageUrls; index as i" class="m-1 dot dot-{{id}}" (click)="this.showImg(i+1)"></span>
       </div>
-
       <div>{{cardObj.acf.company_title}}</div>
       <div>{{cardObj.acf.company_subtitle}}</div>
-      <hr>
-      <div>{{cardObj.acf.company_description}}</div>
 
-      <div class="button-panel">
-        <div *ngIf="cardObj.acf.live_link">
-        <button (click)="this.followlink.open(cardObj.acf.live_link)" type="button" class="btn btn-primary">Visit Site</button>
+      <hr class="modal-divider">
+
+      <div class="modal-company-description">{{cardObj.acf.company_description}}</div>
+      <div class="d-flex justify-content-between pl-2 pr-2">
+        <div style="width:37px;"></div>
+
+        <div *ngIf="cardObj.acf.live_link" (click)="this.followlink.open(cardObj.acf.live_link)" class="modal-site-btn">
+          <svg width="117px" height="37px" viewBox="0 0 117 37" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g transform="translate(-678.000000, -753.000000)">
+                <g transform="translate(679.000000, 754.000000)">
+                  <rect stroke="#2B2B2B" stroke-width="2" x="0" y="0" width="115" height="35" rx="17.5"></rect>
+                  <text fill="#2B2B2B" font-family="Helvetica-Bold, Helvetica" font-size="16" font-weight="bold">
+                    <tspan x="24.3515625" y="23">Visit Site</tspan>
+                  </text>
+                </g>
+              </g>
+            </g>
+          </svg>
         </div>
-        <div *ngIf="cardObj.acf.link_last_accessed">{{cardObj.acf.link_last_accessed}}</div>
-        <button (click)="this.modalService.close(id);" type="button" class="close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+
+        <div (click)="this.modalService.close(id);" class="modal-site-btn">
+          <svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g transform="translate(-937.000000, -753.000000)" stroke="#2B2B2B">
+                <g transform="translate(938.000000, 754.000000)">
+                  <circle stroke-width="2" cx="17.5" cy="17.5" r="17.5"></circle>
+                  <path d="M21,14 L14,21" stroke-width="3" stroke-linecap="square"></path>
+                  <path d="M14,14 L21,21" stroke-width="3" stroke-linecap="square"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
       </div>
+
+      <div class="modal-last-access" *ngIf="cardObj.acf.link_last_accessed">Link Last Accessed:{{cardObj.acf.link_last_accessed}}</div>
     </div>
 
 </div>
