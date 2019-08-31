@@ -28,6 +28,7 @@
     "core-js": "^2.6.9",
     "jquery": "^3.4.1",
     "ng-connection-service": "^1.0.4",
+    "ngx-spinner": "^8.0.3",
     "rxjs": "~6.5.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

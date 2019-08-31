@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {PostsService} from '../services/posts.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-projects',
@@ -8,17 +9,22 @@ import {PostsService} from '../services/posts.service';
 })
 
 export class ProjectsComponent implements OnInit {
-  constructor(private postService: PostsService) { }
+  constructor(private postService: PostsService, private spinner: NgxSpinnerService) { }
   posts;
   alldone = false;
 
   ngOnInit() {
     this.loadPosts();
+    this.spinner.show();
   }
 
-  exampleMethodParent($event) {
+  checkShowAllProjects($event) {
     if (this.posts.length - 1 === parseInt($event, 10)) {
-      this.alldone = true;
+      // to delay for a second, to see the loader and not epileptic flash on quick responses
+      setTimeout(() => {
+        this.alldone = true;
+        this.spinner.hide();
+      }, 1000);
     }
   }
 

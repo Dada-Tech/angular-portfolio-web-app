@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalModule } from './_modal';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { PostsService } from './services/posts.service';
 import { FollowlinkService } from './services/followlink.service';
@@ -43,6 +44,7 @@ import { ProjectComponent } from './project/project.component';
     FlexLayoutModule,
     ModalModule,
     RouterModule,
+    NgxSpinnerModule
   ],
   providers: [PostsService, FollowlinkService],
   bootstrap: [AppComponent]

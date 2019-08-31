@@ -1,14 +1,16 @@
-<div [ngClass]="{'showall':!this.alldone,'shownone':this.alldone}">
-  <div class="spinner-border text-secondary" role="status"></div>
-</div>
+ <ngx-spinner
+   bdColor="rgba(0,0,0,0)"
+   size = "medium"
+   color = "#4d4d4d"
+   type = "ball-atom"
+   [fullScreen] = "true"
+  >
+    <p style="color: #4d4d4d">loading projects...</p>
+  </ngx-spinner>
 <div class="mt-4" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
   <ng-container *ngFor="let post of posts; index as i">
     <div [ngClass]="{'showall p-3':this.alldone,'shownone':!this.alldone}">
-      <app-project (exampleOutput)="exampleMethodParent($event)" [index]="i" [post]="post"></app-project>
+      <app-project (exampleOutput)="checkShowAllProjects($event)" [index]="i" [post]="post"></app-project>
     </div>
   </ng-container>
 </div>
-
-
-
-
