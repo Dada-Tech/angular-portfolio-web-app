@@ -1,14 +1,13 @@
-<div *ngFor="let space of [1,2]"><br></div>
-  <div (mouseout)="cardLower($event)"
-       (mouseover)="cardRaise($event)"
-       (click)="searchOpen($event)"
-       class="text-center card"
-       id="card-{{this.index+1}}"
-  >
-    <app-jw-modal id="{{this.index+1}}" [cardObj]="this.post"></app-jw-modal>
-    <img class="card-img-top" src="{{this.post.acf.company_featured_image}}" alt="company image">
-    <div class="card-infotext">
-      <div>{{this.post.title.rendered}}</div>
-      <div>{{this.post.acf.title_languages}}</div>
-    </div>
+<div (mouseout)="cardLower($event)"
+     (mouseover)="cardRaise($event)"
+     (click)="searchOpen($event)"
+     class="text-center card"
+     id="card-{{this.index+1}}"
+>
+  <app-jw-modal id="{{this.index+1}}" [cardObj]="this.post"></app-jw-modal>
+  <img class="card-img-top" src="{{this.post.acf.company_featured_image}}" alt="company image">
+  <div class="card-infotext">
+    <div>{{this.post.title.rendered}}</div>
+    <div>{{this.post.acf.title_languages}}</div>
   </div>
+</div>
