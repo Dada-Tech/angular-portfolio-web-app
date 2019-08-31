@@ -24,6 +24,13 @@ app-jw-modal .jw-modal .jw-modal-body {
   margin: 0 auto;
   text-align: center;
 }
+@media (max-width: 500px) {
+  app-jw-modal .jw-modal .jw-modal-body {
+    min-width: 320px;
+    max-width: 320px;
+    width: 320px;
+  }
+}
 app-jw-modal .jw-modal-background {
   position: fixed;
   top: 0;
@@ -42,13 +49,19 @@ app-jw-modal .jw-modal-background {
   overflow: hidden;
 }
 
-/* Slideshow container */
+/* Slide show container */
 .slideshow-container {
-  max-width: 500px;
   min-width: 500px;
+  max-width: 500px;
   object-fit: cover;
   position: relative;
   margin: auto;
+}
+@media (max-width: 500px) {
+  .slideshow-container {
+    min-width: 320px;
+    max-width: 320px;
+  }
 }
 
 .img-wrapper img {
@@ -63,6 +76,14 @@ app-jw-modal .jw-modal-background {
   height: 500px;
   display: flex;
 }
+@media (max-width: 500px) {
+  .img-wrapper {
+    min-width: 320px;
+    max-width: 320px;
+    width: 320px;
+    height: 320px;
+  }
+}
 
 .prev, .next {
   cursor: pointer;
@@ -71,7 +92,7 @@ app-jw-modal .jw-modal-background {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: #757575;
+  color: #757575 !important;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -83,6 +104,11 @@ app-jw-modal .jw-modal-background {
 .prev {
   right: 91.5%;
 }
+@media (max-width: 500px) {
+  .prev {
+    right: 87%;
+  }
+}
 
 .next {
   right: 0;
@@ -90,7 +116,7 @@ app-jw-modal .jw-modal-background {
 }
 
 .next:hover, .prev:hover {
-  color: black;
+  color: black !important;
 }
 
 .dot-container {

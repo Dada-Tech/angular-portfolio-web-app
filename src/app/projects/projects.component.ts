@@ -26,9 +26,6 @@ export class ProjectsComponent implements OnInit {
     this.postService.loadPosts().subscribe(
       response => {
         this.posts = response;
-        this.posts = this.posts.concat(this.posts);
-        this.posts = this.posts.concat(this.posts);
-        this.posts = this.posts.concat(this.posts);
       }
     );
   }

@@ -1,3 +1,9 @@
+// Modal big and small sizes, breaks on 500
+$modal-width-big: 500px;
+$modal-height-big: $modal-width-big;
+$modal-width-small: 320px;
+$modal-height-small: $modal-width-small;
+
 /* MODAL STYLES
 -------------------------------*/
 app-jw-modal {
@@ -21,11 +27,17 @@ app-jw-modal {
     .jw-modal-body {
 
       background: #fff;
-      width: 500px;
+      width: $modal-width-big;
 
       /* margin exposes part of the modal background */
       margin: 0 auto;
       text-align: center;
+
+      @media(max-width: 500px) {
+        min-width: $modal-width-small;
+        max-width: $modal-width-small;
+        width: $modal-width-small;
+      }
     }
   }
 
@@ -52,23 +64,18 @@ app-jw-modal {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-/* Slideshow container */
+/* Slide show container */
 .slideshow-container {
-  max-width: 500px;
-  min-width: 500px;
+  min-width: $modal-width-big;
+  max-width: $modal-width-big;
   object-fit: cover;
   position: relative;
   margin: auto;
+
+  @media(max-width: 500px) {
+    min-width: $modal-width-small;
+    max-width: $modal-width-small;
+  }
 }
 
 .img-wrapper img {
@@ -77,11 +84,18 @@ app-jw-modal {
 }
 
 .img-wrapper {
-  min-width:500px;
-  max-width: 500px;
-  width: 500px;
-  height: 500px;
+  min-width: $modal-width-big;
+  max-width: $modal-width-big;
+  width: $modal-width-big;
+  height: $modal-height-big;
   display:flex;
+
+  @media(max-width: 500px) {
+    min-width: $modal-width-small;
+    max-width: $modal-width-small;
+    width: $modal-width-small;
+    height: $modal-height-small;
+  }
 }
 
 .prev, .next {
@@ -91,7 +105,7 @@ app-jw-modal {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: #757575;
+  color: #757575 !important;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -102,6 +116,9 @@ app-jw-modal {
 
 .prev {
   right: 91.5%;
+  @media(max-width: 500px) {
+    right: 87%;
+  }
 }
 
 .next {
@@ -110,7 +127,7 @@ app-jw-modal {
 }
 
 .next:hover, .prev:hover {
-  color: black;
+  color: black !important;
 }
 
 .dot-container {
