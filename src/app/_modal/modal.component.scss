@@ -75,8 +75,8 @@ app-jw-modal {
 
 /* Slide show container */
 .slideshow-container {
-  height: $modal-height-med;
-  width: $modal-width-med;
+  height: $modal-height-small;
+  width: $modal-width-small;
   object-fit: cover;
   position: relative;
   margin: auto;
@@ -86,8 +86,8 @@ app-jw-modal {
     width: $modal-width-med;
   }
   @media(min-width: 768px) {
-    height: $modal-height-med;
-    width: $modal-width-med;
+    height: $modal-height-big;
+    width: $modal-width-big;
   }
 }
 
@@ -106,8 +106,8 @@ app-jw-modal {
     width: $modal-width-med;
   }
   @media(min-width: 768px) {
-    height: $modal-height-med;
-    width: $modal-width-med;
+    height: $modal-height-big;
+    width: $modal-width-big;
   }
 }
 

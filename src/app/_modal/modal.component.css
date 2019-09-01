@@ -58,8 +58,8 @@ app-jw-modal .jw-modal-background {
 
 /* Slide show container */
 .slideshow-container {
-  height: 500px;
-  width: 500px;
+  height: 320px;
+  width: 320px;
   object-fit: cover;
   position: relative;
   margin: auto;
@@ -73,7 +73,7 @@ app-jw-modal .jw-modal-background {
 @media (min-width: 768px) {
   .slideshow-container {
     height: 500px;
-    width: 500px;
+    width: 700px;
   }
 }
 
@@ -96,7 +96,7 @@ app-jw-modal .jw-modal-background {
 @media (min-width: 768px) {
   .img-wrapper {
     height: 500px;
-    width: 500px;
+    width: 700px;
   }
 }
 
