@@ -7,6 +7,11 @@
   >
     <p style="color: #4d4d4d">loading projects...</p>
   </ngx-spinner>
+ <div *ngIf="postError" class="container h-100">
+   <div class="row h-100 justify-content-center align-items-center">
+     <h3>Error Loading Projects</h3>
+   </div>
+ </div>
 <div class="mt-4" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
   <ng-container *ngFor="let post of posts; index as i">
     <div [ngClass]="{'showall p-3':this.alldone,'shownone':!this.alldone}">

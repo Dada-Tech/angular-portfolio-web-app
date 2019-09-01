@@ -19,16 +19,19 @@ app-jw-modal .jw-modal {
 }
 app-jw-modal .jw-modal .jw-modal-body {
   background: #fff;
-  width: 500px;
+  width: 320px;
   /* margin exposes part of the modal background */
   margin: 0 auto;
   text-align: center;
 }
-@media (max-width: 500px) {
+@media (min-width: 500px) {
   app-jw-modal .jw-modal .jw-modal-body {
-    min-width: 320px;
-    max-width: 320px;
-    width: 320px;
+    width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  app-jw-modal .jw-modal .jw-modal-body {
+    width: 700px;
   }
 }
 app-jw-modal .jw-modal .jw-modal-body > * {
@@ -55,16 +58,22 @@ app-jw-modal .jw-modal-background {
 
 /* Slide show container */
 .slideshow-container {
-  min-width: 500px;
-  max-width: 500px;
+  height: 500px;
+  width: 500px;
   object-fit: cover;
   position: relative;
   margin: auto;
 }
-@media (max-width: 500px) {
+@media (min-width: 500px) {
   .slideshow-container {
-    min-width: 320px;
-    max-width: 320px;
+    height: 500px;
+    width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .slideshow-container {
+    height: 500px;
+    width: 500px;
   }
 }
 
@@ -74,25 +83,30 @@ app-jw-modal .jw-modal-background {
 }
 
 .img-wrapper {
-  min-width: 500px;
-  max-width: 500px;
-  width: 500px;
-  height: 500px;
+  height: 320px;
+  width: 320px;
   display: flex;
 }
-@media (max-width: 500px) {
+@media (min-width: 500px) {
   .img-wrapper {
-    min-width: 320px;
-    max-width: 320px;
-    width: 320px;
-    height: 320px;
+    height: 500px;
+    width: 500px;
   }
+}
+@media (min-width: 768px) {
+  .img-wrapper {
+    height: 500px;
+    width: 500px;
+  }
+}
+
+.prev-next-container {
+  position: relative;
+  top: -300px;
 }
 
 .prev, .next {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -100,22 +114,15 @@ app-jw-modal .jw-modal-background {
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: snow;
 }
 
 .prev {
-  right: 91.5%;
-}
-@media (max-width: 500px) {
-  .prev {
-    right: 87%;
-  }
+  border-radius: 0 3px 3px 0;
 }
 
 .next {
-  right: 0;
   border-radius: 3px 0 0 3px;
 }
 

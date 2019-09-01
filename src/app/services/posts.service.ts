@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 export interface Post {
   title: string;
   content: string;
@@ -13,6 +13,8 @@ export interface Post {
 export class PostsService {
   posts: Array<Post>;
   post: Post;
+  cmsUrl = 'https://david-dada-portfolio.000webhostapp.com/wp-json/wp/v2/posts';
+
   constructor(private _http: HttpClient) { }
   public getPosts(): Observable<Array<Post>> {
 
@@ -36,7 +38,7 @@ export class PostsService {
 }
 
 loadPosts(): Observable<Array<Post>> {
-const url = 'https://divinecustomcakes.com/wp-json/wp/v2/posts';
+const url = this.cmsUrl;
 
 return this._http.get<Array<Post>>(url);
 }

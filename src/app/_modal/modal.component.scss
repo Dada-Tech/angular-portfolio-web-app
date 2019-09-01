@@ -1,8 +1,11 @@
-// Modal big and small sizes, breaks on 500
-$modal-width-big: 500px;
-$modal-height-big: $modal-width-big;
+$modal-width-big: 700px;
+$modal-height-big: 500px;
+
+$modal-width-med: 500px;
+$modal-height-med: 500px;
+
 $modal-width-small: 320px;
-$modal-height-small: $modal-width-small;
+$modal-height-small: 320px;
 
 /* MODAL STYLES
 -------------------------------*/
@@ -27,17 +30,19 @@ app-jw-modal {
     .jw-modal-body {
 
       background: #fff;
-      width: $modal-width-big;
+      width: $modal-width-small;
 
       /* margin exposes part of the modal background */
       margin: 0 auto;
       text-align: center;
 
-      @media(max-width: 500px) {
-        min-width: $modal-width-small;
-        max-width: $modal-width-small;
-        width: $modal-width-small;
+      @media(min-width: 500px) {
+        width: $modal-width-med;
       }
+      @media(min-width: 768px) {
+        width: $modal-width-big;
+      }
+
       > * {
         font-family: Helvetica, serif;
         color: #2B2B2B;
@@ -70,15 +75,19 @@ app-jw-modal {
 
 /* Slide show container */
 .slideshow-container {
-  min-width: $modal-width-big;
-  max-width: $modal-width-big;
+  height: $modal-height-med;
+  width: $modal-width-med;
   object-fit: cover;
   position: relative;
   margin: auto;
 
-  @media(max-width: 500px) {
-    min-width: $modal-width-small;
-    max-width: $modal-width-small;
+  @media(min-width: 500px) {
+    height: $modal-height-med;
+    width: $modal-width-med;
+  }
+  @media(min-width: 768px) {
+    height: $modal-height-med;
+    width: $modal-width-med;
   }
 }
 
@@ -88,24 +97,27 @@ app-jw-modal {
 }
 
 .img-wrapper {
-  min-width: $modal-width-big;
-  max-width: $modal-width-big;
-  width: $modal-width-big;
-  height: $modal-height-big;
+  height: $modal-height-small;
+  width: $modal-width-small;
   display:flex;
 
-  @media(max-width: 500px) {
-    min-width: $modal-width-small;
-    max-width: $modal-width-small;
-    width: $modal-width-small;
-    height: $modal-height-small;
+  @media(min-width: 500px) {
+    height: $modal-height-med;
+    width: $modal-width-med;
   }
+  @media(min-width: 768px) {
+    height: $modal-height-med;
+    width: $modal-width-med;
+  }
+}
+
+.prev-next-container {
+  position: relative;
+  top: -300px;
 }
 
 .prev, .next {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -113,20 +125,15 @@ app-jw-modal {
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: snow;
 }
 
 .prev {
-  right: 91.5%;
-  @media(max-width: 500px) {
-    right: 87%;
-  }
+  border-radius: 0 3px 3px 0;
 }
 
 .next {
-  right: 0;
   border-radius: 3px 0 0 3px;
 }
 

@@ -2,9 +2,11 @@
     <div class="jw-modal-body">
       <ng-content></ng-content>
       <div class="slideshow-container">
-          <div class="img-wrapper">
-            <img *ngFor="let image of imageUrls" class="img-{{id}}" src="" alt="gallery image">
-          </div>
+        <div class="img-wrapper">
+          <img *ngFor="let image of imageUrls" class="img-{{id}}" src="" alt="gallery image">
+        </div>
+      </div>
+      <div class="prev-next-container d-flex justify-content-between">
         <a class="prev" (click)="this.nextImg(-1)">&#10094;</a>
         <a class="next" (click)="this.nextImg(1)">&#10095;</a>
       </div>

@@ -11,6 +11,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ProjectsComponent implements OnInit {
   constructor(private postService: PostsService, private spinner: NgxSpinnerService) { }
   posts;
+  postError = false;
   alldone = false;
 
   ngOnInit() {
@@ -32,6 +33,11 @@ export class ProjectsComponent implements OnInit {
     this.postService.loadPosts().subscribe(
       response => {
         this.posts = response;
+      },
+      err => {
+        console.log(err);
+        this.spinner.hide();
+        this.postError = true;
       }
     );
   }
