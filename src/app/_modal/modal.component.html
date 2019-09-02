@@ -10,7 +10,7 @@
         <a class="prev" (click)="this.nextImg(-1)">&#10094;</a>
         <a class="next" (click)="this.nextImg(1)">&#10095;</a>
       </div>
-      <div class="dot-container mt-1">
+      <div class="dot-container">
         <span *ngFor="let dot of imageUrls; index as i" class="m-1 dot dot-{{id}}" (click)="this.showImg(i+1)"></span>
       </div>
       <div>{{cardObj.acf.company_title}}</div>

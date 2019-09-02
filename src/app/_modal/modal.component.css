@@ -60,7 +60,6 @@ app-jw-modal .jw-modal-background {
 .slideshow-container {
   height: 320px;
   width: 320px;
-  object-fit: cover;
   position: relative;
   margin: auto;
 }
@@ -78,8 +77,9 @@ app-jw-modal .jw-modal-background {
 }
 
 .img-wrapper img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
+  padding-top: 10px !important;
 }
 
 .img-wrapper {
@@ -102,7 +102,12 @@ app-jw-modal .jw-modal-background {
 
 .prev-next-container {
   position: relative;
-  top: -300px;
+  top: -150px;
+}
+@media (min-width: 768px) {
+  .prev-next-container {
+    top: -300px;
+  }
 }
 
 .prev, .next {
@@ -133,6 +138,7 @@ app-jw-modal .jw-modal-background {
 .dot-container {
   text-align: center;
   height: 30px;
+  margin-top: -10px;
 }
 
 .dot {
