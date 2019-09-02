@@ -17,6 +17,7 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
     this.loadPosts();
     this.spinner.show();
+    this.postTimeout();
   }
 
   checkShowAllProjects($event) {
@@ -27,6 +28,15 @@ export class ProjectsComponent implements OnInit {
         this.spinner.hide();
       }, 1000);
     }
+  }
+
+  postTimeout() {
+    setTimeout(() => {
+      if (!this.posts && !this.postError) {
+        this.spinner.hide();
+        this.postError = true;
+      }
+    }, 7000);
   }
 
   loadPosts() {
