@@ -1,0 +1,26 @@
+.quote-overlay {
+  &::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: -1;
+    opacity: .6;
+  }
+}
+
+.quote-text {
+  color: #ffffff;
+  font-weight: 100;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  @media screen and (min-width: 1500px) {
+    font-size: 25px;
+  }
+}
