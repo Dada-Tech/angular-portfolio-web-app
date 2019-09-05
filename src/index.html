@@ -7,8 +7,66 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 <body>
-    <app-root></app-root>
+    <app-root>
+      <style type="text/css">
+        body, html {
+          height: 100%;
+          background-color: #8b8b8b;
+        }
+
+        .app-loading {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .app-loading-message {
+          font-size: 40px;
+          color: #dedede;
+          width: auto;
+        }
+
+        .lds-circle {
+          display: inline-block;
+          transform: translateZ(1px);
+        }
+        .lds-circle > div {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin: 30px 6px 6px 0;
+          border-radius: 50%;
+          background: #dedede;
+          animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+        @keyframes lds-circle {
+          0%, 100% {
+            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+          }
+          0% {
+            transform: rotateY(0deg);
+          }
+          50% {
+            transform: rotateY(1800deg);
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+          }
+          100% {
+            transform: rotateY(3600deg);
+          }
+        }
+      </style>
+      <div class="app-loading">
+        <div class="app-loading-message">Loading</div>
+        <div class="lds-circle"><div></div></div>
+        <div class="lds-circle"><div></div></div>
+        <div class="lds-circle"><div></div></div>
+      </div>
+    </app-root>
 </body>
 </html>
