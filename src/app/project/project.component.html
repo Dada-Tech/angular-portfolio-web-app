@@ -1,3 +1,6 @@
+<div class="new-project-img-wrapper" *ngIf="this.post.acf.new_project">
+  <img src="../assets/img/new-project-sticker.svg" alt="new project sticker">
+</div>
 <div (mouseout)="cardLower($event)"
      (mouseover)="cardRaise($event)"
      (click)="searchOpen($event)"
