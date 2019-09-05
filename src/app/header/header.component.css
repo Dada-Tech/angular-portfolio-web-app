@@ -32,11 +32,6 @@
   height: auto;
 }
 
-@media (min-width: 768px) {
-  .github-wrapper {
-    margin-top: 25vh;
-  }
-}
 .github-wrapper > img {
   margin-left: -5px;
 }

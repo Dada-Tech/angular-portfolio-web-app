@@ -1,11 +1,5 @@
- <div class="b container-fluid h-100 p-0">
-   <div class="a row h-100 no-gutters">
-     <app-header class="col-12 col-md-auto pb-5"></app-header>
-     <main class="col">
-       <div class="wrapper">
-         <router-outlet></router-outlet>
-       </div>
-     </main>
-        <div *ngIf="router.url === '/'" id="cloud-scroll"></div>
-   </div>
- </div>
+<div class="row h-100 no-gutters">
+ <app-header class="col-12 col-md-auto pb-5 pb-md-0"></app-header>
+   <router-outlet></router-outlet>
+  <div *ngIf="router.url === '/'" id="cloud-scroll"></div>
+</div>
