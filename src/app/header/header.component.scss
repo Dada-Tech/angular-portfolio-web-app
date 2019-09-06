@@ -1,30 +1,32 @@
 .mynav {
+  position: relative;
+  left:0;
+
+  border-bottom: solid 2px #c6c6c6;
+
   @media(min-width: 768px) {
-    position: relative;
-    left: -3px;
+    border-bottom: none;
+    border-right: solid 2px #c6c6c6;
   }
   &::after{
-    border-right: solid 2px #979797;
     content: "";
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
-    @media(min-width: 768px) {
-      width: 100px;
-      height: 100%;
-    }
+    height: 100%;
     background-color: #000000;
     z-index: -1;
-    opacity: .2;
+    opacity: .1;
   }
 }
 
 .nav-link {
   font-size: 15px;
   color: #535353 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 
   @media(min-width: 768px) {
     padding: 20px 18px 20px 18px !important;
@@ -40,22 +42,27 @@
 
 .active {
   @media(min-width: 768px) {
-  border-top: .5px solid #ababab;
-  border-bottom: .5px solid #ababab;
+  border-top: .5px solid #b6b6b6;
+  border-bottom: .5px solid #b6b6b6;
   }
 }
+
+.social-links {
+  @media(min-width: 768px) {
+    padding-bottom: 30px;
+  }
+}
+
 
 .linkedin-wrapper, .github-wrapper {
   cursor: pointer;
-  width:20px;
-  max-width:20px;
+  width:22px;
+  max-width:22px;
   height: auto;
 }
 
+
 .github-wrapper {
-  @media(min-width: 768px) {
-    // margin-top: 25vh;
-  }
   > img {
     margin-left: -5px;
     @media(min-width: 768px) {

@@ -1,32 +1,32 @@
+.mynav {
+  position: relative;
+  left: 0;
+  border-bottom: solid 2px #c6c6c6;
+}
 @media (min-width: 768px) {
   .mynav {
-    position: relative;
-    left: -3px;
+    border-bottom: none;
+    border-right: solid 2px #c6c6c6;
   }
 }
 .mynav::after {
-  border-right: solid 2px #979797;
   content: "";
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 100%;
   background-color: #000000;
   z-index: -1;
-  opacity: 0.2;
-}
-@media (min-width: 768px) {
-  .mynav::after {
-    width: 100px;
-    height: 100%;
-  }
+  opacity: 0.1;
 }
 
 .nav-link {
   font-size: 15px;
   color: #535353 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 @media (min-width: 768px) {
   .nav-link {
@@ -40,15 +40,21 @@
 
 @media (min-width: 768px) {
   .active {
-    border-top: 0.5px solid #ababab;
-    border-bottom: 0.5px solid #ababab;
+    border-top: 0.5px solid #b6b6b6;
+    border-bottom: 0.5px solid #b6b6b6;
+  }
+}
+
+@media (min-width: 768px) {
+  .social-links {
+    padding-bottom: 30px;
   }
 }
 
 .linkedin-wrapper, .github-wrapper {
   cursor: pointer;
-  width: 20px;
-  max-width: 20px;
+  width: 22px;
+  max-width: 22px;
   height: auto;
 }
 

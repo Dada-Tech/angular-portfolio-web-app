@@ -1,24 +1,24 @@
-<div class="mynav d-flex flex-wrap no-gutters p-0 m-0 justify-content-center h-100">
+<div class="mynav d-flex flex-nowrap flex-md-wrap no-gutters p-0 m-0 justify-content-center h-100">
 
-  <ul class="nav flex-row flex-md-column pt-md-5 m-0 align-self-center">
-    <li class="nav-item pt-md-3 text-center">
+  <ul class="nav flex-row flex-grow-1 justify-content-around flex-nowrap flex-md-column pt-md-5 m-0 align-self-center">
+    <li class="nav-item text-center">
       <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
     </li>
-    <li class="nav-item pt-md-3 text-center">
+    <li class="nav-item text-center">
       <a class="nav-link" routerLink="/skills" routerLinkActive="active">Skills</a>
     </li>
-    <li class="nav-item pt-md-3 text-center">
+    <li class="nav-item text-center">
       <a class="nav-link" routerLink="/projects" routerLinkActive="active">Projects</a>
     </li>
-    <li class="nav-item pt-md-3 text-center">
+    <li class="nav-item text-center">
       <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
     </li>
-    <li class="nav-item pt-md-3 text-center">
+    <li class="nav-item text-center">
       <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
     </li>
   </ul>
 
-  <div class="align-self-center align-self-md-end d-flex flex-md-column flex-row">
+  <div class="social-links align-self-center align-self-md-end d-flex flex-md-column flex-row">
     <div (click)="this.followlink.open('www.github.com/dada-tech')" class="github-wrapper">
       <img class="w-100" src="../assets/img/github-logo.png" alt="github link">
     </div>
