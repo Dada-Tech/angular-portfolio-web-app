@@ -36,7 +36,7 @@ export class ProjectsComponent implements OnInit {
         this.spinner.hide();
         this.postError = true;
       }
-    }, 7000);
+    }, 8000);
   }
 
   loadPosts() {

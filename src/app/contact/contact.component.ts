@@ -10,7 +10,6 @@ export class ContactComponent implements OnInit {
 
   messageForm: FormGroup;
   submitted = false;
-  success = false; // if all validated
 
   constructor(private formBuilder: FormBuilder) {
     this.messageForm = this.formBuilder.group({
@@ -23,10 +22,9 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     this.markFormGroupTouched(this.messageForm);
-    if (this.messageForm.valid) {
-      this.submitted = true;
+    if (this.messageForm.valid && !this.submitted) {
       // this is where you'd ordinarily connect to back end emailing
-      this.success = true;
+      this.submitted = true;
     }
   }
 
