@@ -19,7 +19,7 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
     dotArr;
     imageIndex = 1;
 
-  constructor(private modalService: ModalService, private el: ElementRef, private followlink: FollowlinkService) {
+  constructor(private modalService: ModalService, private el: ElementRef, public followlink: FollowlinkService) {
         this.element = el.nativeElement;
     }
 
@@ -53,6 +53,10 @@ export class ModalComponent implements OnInit, OnDestroy, AfterViewInit {
     ngOnDestroy(): void {
         this.modalService.remove(this.id);
         this.element.remove();
+    }
+
+    modalClose(id) {
+    this.modalService.close(id);
     }
 
     // open modal

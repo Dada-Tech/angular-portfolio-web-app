@@ -7,7 +7,6 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
   messageForm: FormGroup;
   submitted = false;
 

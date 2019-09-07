@@ -9,4 +9,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Dada-Portfolio';
   constructor(private router: Router) { }
+
+  ifCurrentUrl(url) {
+    return this.router.url === url;
+  }
 }

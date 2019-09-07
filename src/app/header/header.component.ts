@@ -9,7 +9,7 @@ import { FollowlinkService } from '../services/followlink.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private followlink: FollowlinkService) { }
+  constructor(public followlink: FollowlinkService) { }
 
   ngOnInit() {
   }
