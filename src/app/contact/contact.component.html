@@ -18,7 +18,8 @@
         <button type="submit" class="submit-button">Submit</button>
       </div>
       <div class="col-12">
-      <h6 class="submit-text animated fadeInUp" *ngIf="submitted">Message received. I will be in touch.</h6>
+        <h6 class="submit-text animated fadeInUp" *ngIf="submitted">Message received. I will be in touch.</h6>
+        <h6 class="submit-text animated fadeInUp" *ngIf="dbError">Something went wrong, please try again later.</h6>
       </div>
     </div>
   </form>

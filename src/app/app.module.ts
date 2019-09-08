@@ -12,6 +12,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { PostsService } from './services/posts.service';
 import { FollowlinkService } from './services/followlink.service';
+import { FormpostService } from './services/formpost.service';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -46,7 +47,11 @@ import { ProjectComponent } from './project/project.component';
     RouterModule,
     NgxSpinnerModule
   ],
-  providers: [PostsService, FollowlinkService],
+  providers: [
+    PostsService,
+    FollowlinkService,
+    FormpostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
