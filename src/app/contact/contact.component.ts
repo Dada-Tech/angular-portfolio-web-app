@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FormpostService } from '../services/formpost.service';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
   messageForm: FormGroup;
   submitOnceFlag = true;
   submitted = false;
   dbError = false;
+  captchaSub;
 
-  constructor(private formBuilder: FormBuilder, private formPostService: FormpostService) {
+  constructor(private formBuilder: FormBuilder, private formPostService: FormpostService, private recaptchaV3Service: ReCaptchaV3Service) {
     this.messageForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       message: ['', [Validators.required, Validators.minLength(3)]],
@@ -22,7 +24,17 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  handleToken(token) {
+    console.log('This is your token: ' + token);
+  }
+
+  public executeImportantAction(): void {
+    this.captchaSub = this.recaptchaV3Service.execute('importantAction')
+      .subscribe((token) => this.handleToken(token));
+  }
+
   onSubmit() {
+    this.executeImportantAction();
     this.markFormGroupTouched(this.messageForm);
     if (this.messageForm.valid && !this.submitted && this.submitOnceFlag) {
       this.submitOnceFlag = false;
@@ -51,4 +63,9 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnDestroy() {
+    if (this.captchaSub) {
+      this.captchaSub.unsubscribe();
+    }
+  }
 }

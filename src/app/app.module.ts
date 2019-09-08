@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalModule } from './_modal';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
 import { PostsService } from './services/posts.service';
 import { FollowlinkService } from './services/followlink.service';
@@ -45,12 +46,14 @@ import { ProjectComponent } from './project/project.component';
     FlexLayoutModule,
     ModalModule,
     RouterModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    RecaptchaV3Module,
   ],
   providers: [
     PostsService,
     FollowlinkService,
-    FormpostService
+    FormpostService,
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LeZSrcUAAAAAO9LyRi-nBVEH2dANXdGthVBSZg0' },
   ],
   bootstrap: [AppComponent]
 })
