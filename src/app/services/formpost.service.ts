@@ -6,15 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormpostService {
   baseUrl = 'https://portfolio-emailer.firebaseapp.com/mail';
+  testUrl = 'http://localhost:5000/mail';
   constructor(private httpClient: HttpClient) { }
 
-  sendPost(messageForm) {
+  sendPost(messageForm, token) {
     return this.httpClient.post(this.baseUrl,
       {
         'name':  messageForm.name,
         'email':  messageForm.email,
         'subject':  messageForm.subject,
-        'message':  messageForm.message
+        'message':  messageForm.message,
+        'recaptcha': token
       });
   }
 }

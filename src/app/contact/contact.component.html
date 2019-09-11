@@ -1,5 +1,5 @@
 <div class="formWrapper animated fadeIn row col-12 no-gutters h-100 justify-content-end pt-4" style="background: url(../assets/img/contact-bg.svg) right no-repeat;">
-  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="messageForm" (ngSubmit)="formValidate()">
     <div class="form-group row ml-auto col-12 col-md-6 h-100 align-content-center text-center">
       <h3 class="form-header-label col-1">Contact Me:</h3><div class="col-11"></div>
       <div class="col-12 col-sm-6">
@@ -11,15 +11,22 @@
       <div class="col-12 pt-5">
         <input [class.invalid]="messageForm.controls.subject.touched && messageForm.controls.subject.invalid" formControlName="subject" type="text" class="feedback-input form-control" placeholder="Subject">
       </div>
-      <div class="col-12 pt-5">
+      <div class="col-12 pt-5 pb-3">
         <textarea [class.invalid]="messageForm.controls.message.touched && messageForm.controls.message.invalid" formControlName="message" type="text" class="feedback-input form-control" placeholder="Message"></textarea>
       </div>
-      <div class="col-12 pt-5">
-        <button type="submit" class="submit-button">Submit</button>
-      </div>
       <div class="col-12">
-        <h6 class="submit-text animated fadeInUp" *ngIf="submitted">Message received. I will be in touch.</h6>
-        <h6 class="submit-text animated fadeInUp" *ngIf="dbError">Something went wrong, please try again later.</h6>
+        <button [ngClass]="{'hidden':(submitted || serverError || !submitOnceFlag)}" type="submit" class="submit-button">Submit</button>
+        <h6 [ngClass]="{'hidden':!submitted,'animated fadeInUp':submitted}">Message received. I will be in touch.</h6>
+        <h6 [ngClass]="{'hidden':!serverError,'animated fadeInUp':serverError}">Something went wrong, please try again later.</h6>
+        <ngx-spinner class="submit-spinner"
+                     bdColor="rgba(0,0,0,0)"
+                     size = "middle"
+                     color = "#4d4d4d"
+                     type = "ball-atom"
+                     [fullScreen] = "false"
+        >
+          <p style="color: #4d4d4d"><br/><br/><br/><br/>Submitting...</p>
+        </ngx-spinner>
       </div>
     </div>
   </form>
