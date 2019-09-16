@@ -13,10 +13,11 @@ export class ProjectsComponent implements OnInit {
   posts;
   postError = false;
   alldone = false;
+  fetchTimeout = 20; // seconds
 
   ngOnInit() {
     this.loadPosts();
-    this.spinner.show();
+    this.spinner.show().catch(err => { console.error(err); });
     this.postTimeout();
   }
 
@@ -25,7 +26,7 @@ export class ProjectsComponent implements OnInit {
       // to delay for a second, to see the loader and not epileptic flash on quick responses
       setTimeout(() => {
         this.alldone = true;
-        this.spinner.hide();
+        this.spinner.hide().catch(err => { console.error(err); });
       }, 1000);
     }
   }
@@ -33,10 +34,10 @@ export class ProjectsComponent implements OnInit {
   postTimeout() {
     setTimeout(() => {
       if (!this.posts && !this.postError) {
-        this.spinner.hide();
+        this.spinner.hide().catch(err => { console.error(err); });
         this.postError = true;
       }
-    }, 8000);
+    }, this.fetchTimeout * 1000);
   }
 
   loadPosts() {
@@ -44,9 +45,9 @@ export class ProjectsComponent implements OnInit {
       response => {
         this.posts = response;
       },
-      err => {
-        console.log(err);
-        this.spinner.hide();
+      error => {
+        console.error(error);
+        this.spinner.hide().catch(err => { console.error(err); });
         this.postError = true;
       }
     );

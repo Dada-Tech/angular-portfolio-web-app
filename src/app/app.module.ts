@@ -11,6 +11,7 @@ import { ModalModule } from './_modal';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
+import { environment } from '../environments/environment';
 import { PostsService } from './services/posts.service';
 import { FollowlinkService } from './services/followlink.service';
 import { FormpostService } from './services/formpost.service';
@@ -53,7 +54,7 @@ import { ProjectComponent } from './project/project.component';
     PostsService,
     FollowlinkService,
     FormpostService,
-    { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LeZSrcUAAAAAO9LyRi-nBVEH2dANXdGthVBSZg0' },
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.siteKey },
   ],
   bootstrap: [AppComponent]
 })

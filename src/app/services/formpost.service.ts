@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormpostService {
-  baseUrl = 'https://portfolio-emailer.firebaseapp.com/mail';
-  testUrl = 'http://localhost:5000/mail';
   constructor(private httpClient: HttpClient) { }
 
   sendPost(messageForm, token) {
-    return this.httpClient.post(this.baseUrl,
+    return this.httpClient.post(environment.firebaseUrl,
       {
         'name':  messageForm.name,
         'email':  messageForm.email,

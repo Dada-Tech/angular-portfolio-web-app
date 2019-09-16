@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FormpostService } from '../services/formpost.service';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
@@ -14,8 +14,10 @@ export class ContactComponent implements OnInit, OnDestroy {
   submitOnceFlag = true;
   submitted = false;
   serverError = false;
-  captchaSub;
   captcha_token;
+  captchaSub;
+  captchaTokenSub;
+  dbSub;
 
   constructor(private formBuilder: FormBuilder, private formPostService: FormpostService, private recaptchaV3Service: ReCaptchaV3Service,
               private spinner: NgxSpinnerService) {
@@ -27,34 +29,42 @@ export class ContactComponent implements OnInit, OnDestroy {
     });
   }
 
-  public getCaptcha(): void {
-    this.captchaSub = this.recaptchaV3Service.execute('importantAction')
-      .subscribe((token) => {
-        this.captcha_token = '' + token;
-        this.dbSubmit();
-      });
+  public getCaptchaToken(): void {
+    this.captchaTokenSub = this.recaptchaV3Service.execute('importantAction')
+      .subscribe((token)  => {
+          this.captcha_token = token;
+          this.dbSubmit();
+        },
+        error  => {
+          console.error(error);
+          this.serverError = true;
+          this.spinner.hide().catch(err => { console.log(err); });
+        }
+      );
   }
 
+  // submit with form full and valid token
   private dbSubmit() {
-    this.formPostService.sendPost(this.messageForm.value, this.captcha_token).subscribe(
+    this.dbSub = this.formPostService.sendPost(this.messageForm.value, this.captcha_token).subscribe(
       data  => {
         this.submitted = true;
-        this.spinner.hide();
+        this.spinner.hide().catch(err => { console.log(err); });
       },
       error  => {
         console.error(error);
         this.serverError = true;
-        this.spinner.hide();
+        this.spinner.hide().catch(err => { console.error(err); });
       }
     );
   }
 
+  // form validate logic
   public formValidate() {
     this.markFormGroupTouched(this.messageForm);
     if (this.messageForm.valid && !this.submitted && this.submitOnceFlag) {
       this.submitOnceFlag = false;
-      this.spinner.show();
-      this.getCaptcha();
+      this.spinner.show().catch(err => { console.error(err); });
+      this.getCaptchaToken();
     }
   }
 
@@ -74,5 +84,12 @@ export class ContactComponent implements OnInit, OnDestroy {
     if (this.captchaSub) {
       this.captchaSub.unsubscribe();
     }
+    if (this.captchaTokenSub) {
+      this.captchaTokenSub.unsubscribe();
+    }
+    if (this.dbSub) {
+      this.dbSub.unsubscribe();
+    }
+    this.spinner.hide().catch(err => { console.error(err); });
   }
 }
