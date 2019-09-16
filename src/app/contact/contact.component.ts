@@ -63,8 +63,9 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.markFormGroupTouched(this.messageForm);
     if (this.messageForm.valid && !this.submitted && this.submitOnceFlag) {
       this.submitOnceFlag = false;
-      this.spinner.show().catch(err => { console.error(err); });
-      this.getCaptchaToken();
+      // this.spinner.show().catch(err => { console.error(err); });
+      // this.getCaptchaToken();
+      this.serverError = true;
     }
   }
 

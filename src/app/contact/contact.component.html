@@ -17,7 +17,9 @@
       <div class="col-12">
         <button [ngClass]="{'hidden':(submitted || serverError || !submitOnceFlag)}" type="submit" class="submit-button">Submit</button>
         <h6 [ngClass]="{'hidden':!submitted,'animated fadeInUp':submitted}">Message received. I will be in touch.</h6>
-        <h6 [ngClass]="{'hidden':!serverError,'animated fadeInUp':serverError}">Something went wrong, please try again later.</h6>
+        <h6 [ngClass]="{'hidden':!serverError,'animated fadeInUp':serverError}">Something went wrong, please try again later.
+          <br>You can reach me at <a href="mailto:david.olu.dada@gmail.com">david.olu.dada@gmail.com</a> instead.
+        </h6>
         <ngx-spinner class="submit-spinner"
                      bdColor="rgba(0,0,0,0)"
                      size = "middle"
