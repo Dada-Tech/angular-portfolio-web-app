@@ -27,7 +27,7 @@ export class ProjectsComponent implements OnInit {
       setTimeout(() => {
         this.alldone = true;
         this.spinner.hide().catch(err => { console.error(err); });
-      }, 1000);
+      }, 500);
     }
   }
 

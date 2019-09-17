@@ -4,13 +4,10 @@
 
 
 .hero-banner{
-  // background: url(../../assets/img/landing.png) left center no-repeat;
-  //background: url(../../assets/img/bg-masthead.jpg) left center no-repeat;
-  // background-size: cover;
   position: relative;
   z-index: 1;
   padding-bottom: 70px;
-  padding-top: 10px;
+  padding-top: 150px;
 
   @media(min-width:767px){
     padding-top: 215px;
