@@ -17,4 +17,9 @@
   transition: 0.6s ease !important;
 }
 
+.cmsLink {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=projects.component.css.map */

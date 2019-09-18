@@ -1,14 +1,14 @@
-<div class="formWrapper animated fadeIn row col-12 no-gutters h-100 justify-content-end pt-4" style="background: url(../assets/img/contact-bg.svg) right no-repeat;">
-  <form [formGroup]="messageForm" (ngSubmit)="formValidate()">
+<div class="formWrapper row col-12 no-gutters h-100 justify-content-end pt-4" style="background: url(../assets/img/contact-bg.svg) right no-repeat;">
+  <form [formGroup]="messageForm" (ngSubmit)="formValidate()" class="animated fadeIn">
     <div class="form-group row ml-auto col-12 col-md-6 h-100 align-content-center text-center">
       <h3 class="form-header-label col-1">Contact Me:</h3><div class="col-11"></div>
-      <div class="col-12 col-sm-6">
+      <div class="col-12 col-sm-6 pt-4">
         <input [class.invalid]="messageForm.controls.name.touched && messageForm.controls.name.invalid" formControlName="name" type="text" class="feedback-input form-control" placeholder="Name">
       </div>
-      <div class="col-12 col-sm-6">
+      <div class="col-12 col-sm-6 pt-4">
         <input [class.invalid]="messageForm.controls.email.touched && messageForm.controls.email.invalid" formControlName="email" type="email" class="feedback-input form-control" placeholder="Email">
       </div>
-      <div class="col-12 pt-5">
+      <div class="col-12 pt-4">
         <input [class.invalid]="messageForm.controls.subject.touched && messageForm.controls.subject.invalid" formControlName="subject" type="text" class="feedback-input form-control" placeholder="Subject">
       </div>
       <div class="col-12 pt-5 pb-3">
@@ -23,11 +23,11 @@
         <ngx-spinner class="submit-spinner"
                      bdColor="rgba(0,0,0,0)"
                      size = "middle"
-                     color = "#4d4d4d"
+                     color = "#e3e3e3"
                      type = "ball-scale-pulse"
                      [fullScreen] = "false"
         >
-          <p style="color: #4d4d4d"><br/><br/><br/><br/>Submitting...</p>
+          <p style="color: #e3e3e3"><br/><br/><br/><br/>Submitting...</p>
         </ngx-spinner>
       </div>
     </div>

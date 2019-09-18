@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {PostsService} from '../services/posts.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { FollowlinkService } from '../services/followlink.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,11 +10,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 
 export class ProjectsComponent implements OnInit {
-  constructor(private postService: PostsService, private spinner: NgxSpinnerService) { }
+  constructor(private postService: PostsService, private spinner: NgxSpinnerService, public followlink: FollowlinkService) { }
   posts;
   postError = false;
   alldone = false;
-  fetchTimeout = 20; // seconds
+  fetchTimeout = 15; // seconds
 
   ngOnInit() {
     this.loadPosts();

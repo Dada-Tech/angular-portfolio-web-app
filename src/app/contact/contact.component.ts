@@ -16,7 +16,6 @@ export class ContactComponent implements OnInit, OnDestroy {
   serverError = false;
   captcha_token;
   captchaSub;
-  captchaTokenSub;
   dbSub;
 
   constructor(private formBuilder: FormBuilder, private formPostService: FormpostService, private recaptchaV3Service: ReCaptchaV3Service,
@@ -30,7 +29,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   public getCaptchaToken(): void {
-    this.captchaTokenSub = this.recaptchaV3Service.execute('importantAction')
+    this.captchaSub = this.recaptchaV3Service.execute('importantAction')
       .subscribe((token)  => {
           this.captcha_token = token;
           this.dbSubmit();
@@ -63,9 +62,8 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.markFormGroupTouched(this.messageForm);
     if (this.messageForm.valid && !this.submitted && this.submitOnceFlag) {
       this.submitOnceFlag = false;
-      // this.spinner.show().catch(err => { console.error(err); });
-      // this.getCaptchaToken();
-      this.serverError = true;
+      this.spinner.show().catch(err => { console.error(err); });
+      this.getCaptchaToken();
     }
   }
 
@@ -82,15 +80,13 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.spinner.hide().catch(err => { console.error(err); });
+
     if (this.captchaSub) {
       this.captchaSub.unsubscribe();
-    }
-    if (this.captchaTokenSub) {
-      this.captchaTokenSub.unsubscribe();
     }
     if (this.dbSub) {
       this.dbSub.unsubscribe();
     }
-    this.spinner.hide().catch(err => { console.error(err); });
   }
 }

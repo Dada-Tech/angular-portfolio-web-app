@@ -9,7 +9,12 @@
   </ngx-spinner>
  <div *ngIf="postError" class="container h-100">
    <div class="row h-100 justify-content-center align-items-center">
-     <h3>Error Loading Projects</h3>
+     <h3>Error Loading Projects.
+       <br>
+       <br>
+       You can find my projects at:
+      <div class="cmsLink" (click)="this.followlink.open('www.wordpress.dadadavid.com')">wordpress.dadadavid.com</div>
+     </h3>
    </div>
  </div>
 <div class="mt-4" fxLayout="row wrap" fxLayoutAlign="space-evenly center">

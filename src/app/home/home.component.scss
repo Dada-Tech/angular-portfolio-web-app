@@ -1,39 +1,41 @@
 @import 'variables';
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel|Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Nixie+One&display=swap');
 
+$title_font: 'Nixie One';
+$subtitle_font: 'Cinzel';
 
-.hero-banner{
+.hero-banner {
   position: relative;
   z-index: 1;
   padding-bottom: 70px;
   padding-top: 150px;
 
-  @media(min-width:767px){
+  @media(min-width:767px) {
     padding-top: 215px;
   }
 
-  h1{
+  h1 {
     color: $white;
     text-transform: uppercase;
     margin-bottom: 20px;
   }
 
-  > *{
+  > * {
     color: $white;
   }
 }
 
 .hero-title {
   color: #dddddd;
-  font-family: 'Playfair Display', Verdana, serif;
+  font-family: $title_font, sans-serif;
   text-shadow: 2px 2px 4px #2B2B2B;
-  font-weight: bolder;
   font-size: 8vh;
+  font-weight: 100;
 }
 
 .hero-subtitle {
-  font-family: 'Cinzel', Arial, serif;
+  font-family: $subtitle_font, Helvetica, serif;
   font-weight: 500;
   color: #2B2B2B;
   max-width: 750px;
