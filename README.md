@@ -1,13 +1,24 @@
-# wordpress-api-and-Angular2-FactoryHR
-This code fetches posts, users and everything from a wordpress site and display them in an angular app.
-Working code as a result of tutorial https://medium.com/@factoryhr/how-to-use-wordpress-api-and-angular-2-cab636176548.
+# Dada Portfolio
+##### Live Link - [dadadavid.com](https://dadadavid.com)  
+  
+## Intro
+I built this project to exercise and solidify my full stack knowledge as well as creating a developer portfolio. This is to show the inner workings of my portfolio as I may not be releasing all of the content on GitHub.
 
- 
+## Front End:
+### Technologies used:
+* Angular8
+* Bootstrap 4
+* SCSS  
+   
+The front end of this project is a Single-Page-Application built with Angular 8.
+Bootstrap 4 was used to achieve responsive views for mobile, tablet, and any size web browser.  
+For more advanced customization I used SCSS which allowed me to leverage nested syntax, mixins, and variables.
 
-
-# MyApp
-
+# 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+
+## Install
+Run `npm install` to install dependencies 
 
 ## Development server
 
