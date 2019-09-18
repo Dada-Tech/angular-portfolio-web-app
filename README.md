@@ -4,8 +4,7 @@
 ## Intro
 I built this project to exercise and solidify my full stack knowledge as well as creating a developer portfolio. This is to show the inner workings of my portfolio as I may not be releasing all of the content on GitHub.
 
-## Front End:
-### Technologies used:
+## Technologies used:
 * Angular8
 * Bootstrap 4
 * SCSS  
