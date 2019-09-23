@@ -15,12 +15,16 @@ export class ProjectsComponent implements OnInit {
   postError = false;
   alldone = false;
   fetchTimeout = 15; // seconds
-  showToast = true;
+  showToast = false;
 
   ngOnInit() {
     this.loadPosts();
     this.spinner.show().catch(err => { console.error(err); });
     this.postTimeout();
+
+    setTimeout(() => {
+      this.showToast = true;
+    }, 500);
 
     setTimeout(() => {
       this.showToast = false;
