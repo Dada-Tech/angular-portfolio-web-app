@@ -22,4 +22,37 @@
   cursor: pointer;
 }
 
+.small-box {
+  height: 20px;
+  border-radius: 3px;
+  background-color: #303030;
+  margin-right: 10px;
+}
+.small-box > span {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.toast {
+  z-index: 40;
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .toast {
+    top: 0;
+  }
+}
+.toast > div {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.custom-toast-hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 /*# sourceMappingURL=projects.component.css.map */

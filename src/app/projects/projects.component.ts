@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import {PostsService} from '../services/posts.service';
+import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../services/posts.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { FollowlinkService } from '../services/followlink.service';
 
@@ -15,6 +15,7 @@ export class ProjectsComponent implements OnInit {
   postError = false;
   alldone = false;
   fetchTimeout = 15; // seconds
+  showToast = true;
 
   ngOnInit() {
     this.loadPosts();
@@ -52,5 +53,9 @@ export class ProjectsComponent implements OnInit {
         this.postError = true;
       }
     );
+  }
+
+  closeToast() {
+    this.showToast = false;
   }
 }

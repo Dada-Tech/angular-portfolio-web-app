@@ -1,13 +1,23 @@
- <ngx-spinner
-   bdColor="rgba(0,0,0,0)"
-   size = "medium"
-   color = "#4d4d4d"
-   type = "ball-atom"
-   [fullScreen] = "true"
-  >
-    <p style="color: #4d4d4d">loading projects...</p>
-  </ngx-spinner>
- <div *ngIf="postError" class="container h-100">
+<ngx-spinner
+  bdColor="rgba(0,0,0,0)"
+  size = "medium"
+  color = "#4d4d4d"
+  type = "ball-atom"
+  [fullScreen] = "true"
+>
+  <p style="color: #4d4d4d">loading projects...</p>
+</ngx-spinner>
+
+ <ngb-toast class="toast animated bounceInRight" *ngIf="showToast" [autohide]="true" (click)="closeToast()" (hide)="closeToast()" [delay]="5000">
+   <div class="custom-toast-header">
+     <span class="small-box"><span>....</span></span>
+     <span class="custom-header-text">Instructions:</span>
+   </div>
+   <hr class="custom-toast-hr">
+   Click a project to view more details
+ </ngb-toast>
+
+ <div *ngIf="postError" class="post-container h-100">
    <div class="row h-100 justify-content-center align-items-center">
      <h3>Error Loading Projects.
        <br>
