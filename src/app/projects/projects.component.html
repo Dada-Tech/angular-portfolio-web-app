@@ -8,25 +8,28 @@
   <p style="color: #4d4d4d">loading projects...</p>
 </ngx-spinner>
 
- <ngb-toast class="toast animated bounceInRight" *ngIf="showToast" [autohide]="true" (click)="closeToast()" (hide)="closeToast()" [delay]="5000">
-   <div class="custom-toast-header">
-     <span class="small-box"><span>....</span></span>
-     <span class="custom-header-text">Instructions:</span>
-   </div>
-   <hr class="custom-toast-hr">
-   Click a project to view more details
- </ngb-toast>
-
- <div *ngIf="postError" class="post-container h-100">
-   <div class="row h-100 justify-content-center align-items-center">
-     <h3>Error Loading Projects.
-       <br>
-       <br>
-       You can find my projects at:
-      <div class="cmsLink" (click)="this.followlink.open('www.wordpress.dadadavid.com')">wordpress.dadadavid.com</div>
-     </h3>
-   </div>
+<div *ngIf="postError" class="post-container h-100">
+ <div class="row h-100 justify-content-center align-items-center">
+   <h3>Error Loading Projects.
+     <br>
+     <br>
+     You can find my projects at:
+    <div class="cmsLink" (click)="this.followlink.open('www.wordpress.dadadavid.com')">wordpress.dadadavid.com</div>
+   </h3>
  </div>
+</div>
+
+
+
+<div class="custom-toast animated bounceInRight" *ngIf="showToast" (click)="this.closeToast()">
+  <div class="custom-toast-header">
+    <div class="small-box"></div>
+    <div class="toast-header-text">Instructions:</div>
+  </div>
+  <hr class="custom-toast-hr">
+  Click a project to view more details
+</div>
+
 <div class="mt-4" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
   <ng-container *ngFor="let post of posts; index as i">
     <div [ngClass]="{'showall p-3':this.alldone,'shownone':!this.alldone}">

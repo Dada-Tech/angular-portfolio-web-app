@@ -21,6 +21,10 @@ export class ProjectsComponent implements OnInit {
     this.loadPosts();
     this.spinner.show().catch(err => { console.error(err); });
     this.postTimeout();
+
+    setTimeout(() => {
+      this.showToast = false;
+    }, 5000);
   }
 
   checkShowAllProjects($event) {
