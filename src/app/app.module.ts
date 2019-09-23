@@ -25,6 +25,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { RouterModule } from '@angular/router';
 import { ProjectComponent } from './project/project.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProjectComponent } from './project/project.component';
     ProjectsComponent,
     SkillsComponent,
     ProjectComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,

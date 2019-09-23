@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent} from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
+import { Error404Component } from './error404/error404.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,11 @@ const routes: Routes = [
   {
     path: 'skills',
     component: SkillsComponent
-  }
+  },
+  {
+    path: '**',
+    component: Error404Component
+  },
 ];
 
 @NgModule({
