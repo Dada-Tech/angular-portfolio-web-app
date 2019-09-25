@@ -1,5 +1,5 @@
 <div class="formWrapper row col-12 no-gutters h-100 justify-content-end pt-4" style="background: url(../assets/img/contact-bg.svg) right no-repeat;">
-  <form [formGroup]="messageForm" (ngSubmit)="formValidate()" class="animated fadeIn pt-5 pt-sm-0">
+  <form [formGroup]="messageForm" (ngSubmit)="formValidate()" class="animated fadeIn pt-1 pt-sm-0">
     <div class="form-group row ml-auto col-12 col-md-6 h-100 align-content-center text-center mb-0">
       <h3 class="form-header-label col-1">Contact Me:</h3><div class="col-11"></div>
       <div class="col-12 col-sm-6 pt-4">
@@ -11,7 +11,7 @@
       <div class="col-12 pt-4">
         <input [class.invalid]="messageForm.controls.subject.touched && messageForm.controls.subject.invalid" formControlName="subject" type="text" class="feedback-input form-control" placeholder="Subject">
       </div>
-      <div class="col-12 pt-5 pb-3">
+      <div class="col-12 pt-3 pt-sm-5 pb-3">
         <textarea [class.invalid]="messageForm.controls.message.touched && messageForm.controls.message.invalid" formControlName="message" type="text" class="feedback-input form-control" placeholder="Message"></textarea>
       </div>
       <div class="form-bottom-wrapper col-12">
