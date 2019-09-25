@@ -28,7 +28,7 @@
   Click a project to view more details
 </div>
 
-<div class="mt-4" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+<div class="projects-wrapper h-100 pt-1" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
   <ng-container *ngFor="let post of posts; index as i">
     <div [ngClass]="{'showall p-3':this.alldone,'shownone':!this.alldone}">
       <app-project (exampleOutput)="checkShowAllProjects($event)" [index]="i" [post]="post"></app-project>

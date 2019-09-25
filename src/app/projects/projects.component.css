@@ -1,3 +1,7 @@
+.projects-wrapper {
+  overflow: auto;
+}
+
 .wrap {
   min-height: 250px;
   max-height: 250px;
