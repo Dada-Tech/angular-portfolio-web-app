@@ -2,6 +2,10 @@ app-header {
   min-height: max-content;
 }
 
+.router-wrapper {
+  overflow: auto;
+}
+
 #cloud-scroll {
   background: url('../assets/img/clouds.png') repeat-x;
   background-size: cover;

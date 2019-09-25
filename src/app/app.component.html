@@ -1,6 +1,6 @@
 <div class="d-flex flex-md-row flex-column h-100 w-100 p-0 m-0 no-gutters">
   <app-header></app-header>
-  <div class="h-100 w-100">
+  <div class="router-wrapper h-100 w-100">
     <router-outlet></router-outlet>
     <div *ngIf="ifCurrentUrl('/')" id="cloud-scroll"></div>
   </div>
