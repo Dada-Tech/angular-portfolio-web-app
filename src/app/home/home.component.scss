@@ -1,9 +1,8 @@
-@import 'variables';
-
-@import url('https://fonts.googleapis.com/css?family=Cinzel|Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Nixie+One');
 
 $title_font: 'Nixie One';
 $subtitle_font: 'Cinzel';
+$white: #FFFFFF;
 
 .hero-banner {
   position: relative;
