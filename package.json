@@ -30,7 +30,7 @@
     "jquery": "^3.5.0",
     "ng-connection-service": "^1.0.4",
     "ng-recaptcha": "^5.0.0",
-    "ngx-spinner": "^9.0.2",
+    "ngx-spinner": "8.1.0",
     "rxjs": "^6.5.5",
     "tslib": "^1.11.1",
     "zone.js": "~0.9.1"
