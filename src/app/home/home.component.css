@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cinzel|Nixie+One");
+@import url("https://fonts.googleapis.com/css?family=Nixie+One");
 .hero-banner {
   position: relative;
   z-index: 1;
@@ -28,7 +28,7 @@
 }
 
 .hero-subtitle {
-  font-family: "Cinzel", Helvetica, serif;
+  font-family: "Nixie One", Helvetica, serif;
   font-weight: 500;
   color: #2B2B2B;
   max-width: 750px;

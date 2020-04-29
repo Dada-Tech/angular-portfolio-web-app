@@ -2,6 +2,6 @@
   <app-header></app-header>
   <div class="router-wrapper h-100 w-100">
     <router-outlet></router-outlet>
-    <div *ngIf="ifCurrentUrl('/')" id="cloud-scroll"></div>
+    <div *ngIf="['/'].includes(router.url)" id="cloud-scroll"></div>
   </div>
 </div>

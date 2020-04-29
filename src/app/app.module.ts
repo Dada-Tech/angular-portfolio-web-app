@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalModule } from './_modal';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
 import { PostsService } from './services/posts.service';
@@ -51,6 +52,8 @@ import { Error404Component } from './error404/error404.component';
     RouterModule,
     NgxSpinnerModule,
     RecaptchaV3Module,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [
     PostsService,
