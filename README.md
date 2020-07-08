@@ -1,5 +1,6 @@
 # Dada Portfolio
-##### Live Link - [dadadavid.com](https://dadadavid.com)  
+##### Live Link - [dadadavid.com](https://dadadavid.com)
+##### Detailed Writeup - [Portfolio Gist](https://gist.github.com/Dada-Tech/4d651450e20f1267ce77dc26981ad7a3)
   
 ## Intro
 I built this project to exercise and solidify my full stack knowledge as well as creating a developer portfolio. This is to show the inner workings of my portfolio as I may not be releasing all of the content on GitHub.
