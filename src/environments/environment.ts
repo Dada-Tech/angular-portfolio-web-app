@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  cmsUrl: 'https://wordpress.dadadavid.com/wp-json/wp/v2/posts',
+  cmsUrl: 'https://wordpress.daviddada.com/wp-json/wp/v2/posts',
   firebaseUrl : 'https://portfolio-emailer.firebaseapp.com/mail',
   firebaseCaptchaUrl : 'https://portfolio-emailer.firebaseapp.com/recaptcha',
   firebaseUrltest : 'http://localhost:5000/mail',
