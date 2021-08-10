@@ -1,17 +1,17 @@
 # Dada Portfolio
-##### Live Link - [dadadavid.com](https://dadadavid.com)
+##### Live Link - [DavidDada.com](https://daviddada.com)
 ##### Detailed Writeup - [Portfolio Gist](https://gist.github.com/Dada-Tech/4d651450e20f1267ce77dc26981ad7a3)
   
 ## Intro
 I built this project to exercise and solidify my full stack knowledge as well as creating a developer portfolio. This is to show the inner workings of my portfolio as I may not be releasing all of the content on GitHub.
 
 ## Technologies used
-* Angular8
-* Bootstrap 4
+* Angular 2+
+* Bootstrap
 * SCSS  
    
-The front end of this project is a Single-Page-Application built with Angular 8.
-Bootstrap 4 was used to achieve responsive views for mobile, tablet, and any size web browser.  
+The front end of this project is a Single-Page-Application built with Angular 2+.
+Bootstrap was used to achieve responsive views for mobile, tablet, and any size web browser.  
 For more advanced customization I used SCSS which allowed me to leverage nested syntax, mixins, and variables.
 
 # 
