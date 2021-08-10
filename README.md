@@ -15,7 +15,7 @@ Bootstrap was used to achieve responsive views for mobile, tablet, and any size 
 For more advanced customization I used SCSS which allowed me to leverage nested syntax, mixins, and variables.
 
 # 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.
 
 ## Install
 Run `npm install` to install dependencies 
