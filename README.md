@@ -1,5 +1,4 @@
-# Dada Portfolio
-##### Live Link - [DavidDada.com](https://daviddada.com)
+# Dada Legacy Portfolio Web-App
 ##### Detailed Writeup - [Portfolio Gist](https://gist.github.com/Dada-Tech/4d651450e20f1267ce77dc26981ad7a3)
   
 ## Intro
