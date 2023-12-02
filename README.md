@@ -27,7 +27,12 @@ For more advanced customization I used SCSS which allowed me to leverage nested 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.
 
 ## Install
-Run `npm install` to install dependencies 
+Run `npm install --legacy-peer-deps` to install dependencies.
+
+## Gotchas
+1. Also, you will need to be using `Node v16`.
+
+2. You might have to run `npm audit fix --force`, but ensure angular-cli (`@angular/cli`, `@angular/compiler-cli`) stays at v12
 
 ## Development server
 
