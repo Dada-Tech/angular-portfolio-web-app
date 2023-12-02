@@ -5,9 +5,19 @@
 I built this project to exercise and solidify my full stack knowledge as well as creating a developer portfolio. This is to show the inner workings of my portfolio as I may not be releasing all of the content on GitHub.
 
 ## Technologies used
-* Angular 2+
-* Bootstrap
-* SCSS  
+* Angular 2+ - Single page application
+* Bootstrap - Tailwind-like streamlined styling
+* SCSS - For more advanced styling
+* Firebase - Cloud Services for security, quickdevelopment, scalability
+* Firestore (NoSQL DB) - for Database backed contact form
+* Node - Backend Server
+* Express - Backend Server API
+* Captcha v3 - Security middleware, prevents spam/bots
+* Security Middleware (CORS, input validation) - Additional backend security
+* CMS - Dynamically update Portfolio projects without touching code
+* Wordpress API - Leveraging this API as a CMS
+* RESTful Web Services - concept behind the CMS API
+
    
 The front end of this project is a Single-Page-Application built with Angular 2+.
 Bootstrap was used to achieve responsive views for mobile, tablet, and any size web browser.  
